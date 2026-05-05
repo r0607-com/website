@@ -1,19 +1,22 @@
 const root = document.documentElement;
 const statusText = document.querySelector("#status-text");
+
+if (!statusText) throw new Error("#status-text element not found");
+
 const statusMessages = [
   "Building robots ...",
-  "Initialiazing OS ...",
+  "Initializing OS ...",
   "Calibrating sensors ...",
   "Loading AI ...",
   "Preparing workshops ...",
   "Coming soon ..."
 ];
 
-const typeSpeed = 70;
-const messageInterval = 5000;
-let statusIndex = statusMessages.length - 1;
-let typeTimer = 0;
-let nextMessageTimer = 0;
+const typeSpeed = 70;       // ms per character
+const messageInterval = 5000; // ms to hold a completed message before cycling
+let statusIndex = statusMessages.length - 1; // starts at last so first showNext() wraps to 0
+let typeTimer = null;
+let nextMessageTimer = null;
 
 function setCubeSize() {
   const viewport = window.visualViewport || window;

@@ -3,12 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="R0607.com — coming soon.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://r0607.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="R0607.com">
+    <meta property="og:description" content="R0607.com — coming soon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://r0607.com/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="R0607.com">
+    <meta name="twitter:description" content="R0607.com — coming soon.">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23030407'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='10' fill='%23ff2a2a'>R06</text></svg>">
+
     <title>R0607.com</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main class="landing" aria-label="R0607.com coming soon">
-      <section class="scene" aria-live="polite">
+      <section class="scene">
         <h1 class="sr-only">R0607.com</h1>
         <div class="cube-wrap" aria-hidden="true">
           <div class="cube">
@@ -21,10 +38,15 @@
           </div>
         </div>
       </section>
-      <h2 class="terminal-status" aria-live="polite">
-        <span id="status-text"></span><span class="cursor" aria-hidden="true"></span>
+      <h2 class="terminal-status">
+        <span id="status-text" aria-live="polite" aria-atomic="true"></span><span class="cursor" aria-hidden="true"></span>
       </h2>
     </main>
+    <noscript>
+      <p style="position:fixed;bottom:1.5rem;width:100%;text-align:center;color:#ffecec;font-family:'Courier New',monospace;font-size:1.2rem;font-weight:700;margin:0;">
+        Coming soon ...
+      </p>
+    </noscript>
     <script src="script.js"></script>
   </body>
 </html>
