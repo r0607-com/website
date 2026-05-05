@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f0f4ff;
+  --surface: #ffffff;
+  --surface-alt: #e8edf8;
+  --grid-line: #c8d4e8;
+  --cyan-soft: #0891b2;
+  --pink-soft: #db2777;
+  --violet-soft: #7c3aed;
+  --green-soft: #16a34a;
+  --amber-soft: #ca8a04;
+  --foreground: #0d1117;
+  --muted: #4b5a6e;
+  --border: #c8d4e8;
+  --glow-cyan: rgba(8, 145, 178, 0.16);
+  --glow-pink: rgba(219, 39, 119, 0.12);
+}
+
+.dark {
+  --background: #0a0e1a;
+  --surface: #111827;
+  --surface-alt: #1a2235;
+  --grid-line: #1e2d47;
+  --cyan-soft: #7ee8fa;
+  --pink-soft: #f9a8d4;
+  --violet-soft: #c4b5fd;
+  --green-soft: #86efac;
+  --amber-soft: #fcd34d;
+  --foreground: #e2e8f5;
+  --muted: #9aacbf;
+  --border: #2a3a52;
+  --glow-cyan: rgba(126, 232, 250, 0.15);
+  --glow-pink: rgba(249, 168, 212, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-grid-line: var(--grid-line);
+  --color-cyan-soft: var(--cyan-soft);
+  --color-pink-soft: var(--pink-soft);
+  --color-violet-soft: var(--violet-soft);
+  --color-green-soft: var(--green-soft);
+  --color-amber-soft: var(--amber-soft);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, sans-serif;
+}
+
+button,
+a,
+select,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--cyan-soft);
+  color: var(--background);
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.tron-grid {
+  position: relative;
+  isolation: isolate;
+}
+
+.tron-grid::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    linear-gradient(to right, color-mix(in srgb, var(--grid-line) 65%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--grid-line) 65%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 82%, transparent);
+  transform: perspective(800px) rotateX(68deg) translateY(-16vh) scale(1.8);
+  transform-origin: top center;
+  animation: grid-drive 16s linear infinite;
+  opacity: 0.55;
+}
+
+.tron-grid::after {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  content: "";
+  background:
+    radial-gradient(circle at 20% 15%, var(--glow-cyan), transparent 28%),
+    radial-gradient(circle at 82% 12%, var(--glow-pink), transparent 24%),
+    linear-gradient(180deg, var(--background), color-mix(in srgb, var(--surface-alt) 35%, var(--background)));
+}
+
+.crosshair-cursor {
+  cursor:
+    url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%237ee8fa' stroke-width='1.5'%3E%3Ccircle cx='16' cy='16' r='8'/%3E%3Cpath d='M16 2v8M16 22v8M2 16h8M22 16h8'/%3E%3C/g%3E%3Cpath d='M16 11v10M11 16h10' stroke='%23f9a8d4' stroke-width='1'/%3E%3C/svg%3E")
+      16 16,
+    crosshair;
+}
+
+.scanline {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 50%
+  );
+  background-size: 100% 6px;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: var(--cyan-soft);
+}
+
+@keyframes grid-drive {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 56px;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 42px 0 var(--glow-cyan);
+  }
+}
+
+/* Power station selected card: animated energy-flow border */
+@keyframes energy-flow {
+  0% { border-color: var(--green-soft); }
+  50% { border-color: var(--color-yellow-soft, #fcd34d); box-shadow: 0 0 28px rgba(252, 211, 77, 0.35); }
+  100% { border-color: var(--green-soft); }
+}
+
+.energy-flow-border {
+  animation: energy-flow 1.8s ease-in-out infinite;
+}
+
+/* Perception sensor badge: subtle pulse */
+@keyframes sensor-pulse-anim {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.sensor-pulse {
+  animation: sensor-pulse-anim 1.4s ease-in-out infinite;
+}
+
+/* Floating hero shapes */
+@keyframes float-up-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-rotate {
+  from { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(180deg) translateY(-8px); }
+  to { transform: rotate(360deg) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .tron-grid::before {
+    transform: none;
+    background-size: 40px 40px;
+    opacity: 0.28;
+  }
+
+  .crosshair-cursor {
+    cursor: auto;
+  }
+}

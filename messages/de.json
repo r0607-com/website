@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "logo": "R0607",
+    "tagline": "Assemble. Program. Think.",
+    "home": "Start",
+    "events": "Workshops",
+    "learn": "Lernen",
+    "education": "Schulen",
+    "theme": "Theme wechseln",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "footer": {
+    "description": "Ein praktisches Robotik-Lernerlebnis für Kinder, Jugendliche, Erwachsene, Eltern und Schulen.",
+    "events": "Workshops",
+    "learn": "Lernen",
+    "education": "Schulen",
+    "privacy": "Datenschutz",
+    "imprint": "Impressum",
+    "copyright": "© 2026 R0607.",
+    "opensource": "Gebaut als local-first Lernprojekt."
+  },
+  "hero": {
+    "badge": "Berlin-Workshops bald verfügbar",
+    "heading": "Build the robot. Learn the future.",
+    "copy": "Baue deinen eigenen Roboter, wähle Sensoren und Antrieb, und lerne Aiva kennen: den lokalen KI-Lerncoach direkt auf dem Roboter.",
+    "start": "Roboter bauen",
+    "workshops": "Workshop-Interesse",
+    "stats": {
+      "brain": "Robot Brain",
+      "code": "Python / C++ / Rust",
+      "aiva": "Aiva on-device",
+      "privacy": "Keine Cloud-KI-Uploads"
+    }
+  },
+  "robot": {
+    "label": "Aktueller Build",
+    "name": "Dein R0607"
+  },
+  "sections": {
+    "brain": {
+      "kicker": "Brain Brick",
+      "title": "Der Brain Brick",
+      "tagline": "Hier beginnt alles.",
+      "copy": "Das Kernmodul ist die Recheneinheit des Roboters in einem technic-brick-kompatiblen Gehäuse. Hier verbinden sich Sensoren, Code und Lernen."
+    },
+    "power": {
+      "kicker": "Power Up",
+      "title": "Power Up",
+      "tagline": "Gib ihm Energie.",
+      "copy": "Wähle das Energiesystem für deinen Build. Der Website-Builder ist spielerisch, zeigt aber die modulare Richtung des echten Roboters."
+    },
+    "perception": {
+      "kicker": "Wahrnehmung",
+      "title": "Wahrnehmung",
+      "tagline": "Gib ihm Augen und Ohren.",
+      "copy": "Wähle bis zu drei Sensoren. Kameras, Abstandssensoren, Infrarot und LiDAR eröffnen unterschiedliche Projekte."
+    },
+    "motion": {
+      "kicker": "Bewegung",
+      "title": "Bewegung",
+      "tagline": "Bring ihn in Bewegung.",
+      "copy": "Wähle, wie sich dein Roboter bewegt. Räder sind einfach und schnell, Ketten sind stabil, Omni-Wheels ermöglichen seitliche Bewegung."
+    },
+    "ai": {
+      "kicker": "Intelligenz",
+      "title": "Lerne Aiva kennen",
+      "tagline": "Programmiere, frage, debugge und lerne.",
+      "copy": "Aiva ist die Persönlichkeit und der Lerncoach des Roboters. LLM, Stimme und Learning Hub laufen direkt auf dem Roboter."
+    },
+    "result": {
+      "kicker": "Dein Roboter",
+      "title": "Build the robot. Learn the future.",
+      "copy": "Speichere diese Konfiguration lokal in diesem Browser oder starte neu. In diesem spielerischen Builder wird nichts hochgeladen.",
+      "learnMore": "Mehr erfahren"
+    }
+  },
+  "components": {
+    "brain_brick": { "name": "Brain Brick", "desc": "Die immer enthaltene Recheneinheit für Code, Sensoren und lokale KI-Experimente." },
+    "battery_standard": { "name": "Standard Battery", "desc": "Eine einfache Energieoption für fokussierte Indoor-Workshop-Builds." },
+    "battery_extended": { "name": "Extended Battery", "desc": "Mehr Laufzeit für größere Experimente und längere Lerneinheiten." },
+    "battery_outdoor": { "name": "Outdoor Charging", "desc": "Ein robuster Energieansatz für Outdoor-Projekte und Feldtests." },
+    "rgb_camera": { "name": "RGB Camera", "desc": "Ergänzt visuelle Wahrnehmung für Bildprojekte und Roboterperspektive." },
+    "stereo_camera": { "name": "Stereo Camera", "desc": "Ergänzt Tiefenwahrnehmung, damit der Roboter Distanzen einschätzen kann." },
+    "ultrasound": { "name": "Ultrasound Sensor", "desc": "Klassische Abstandsmessung für Hindernisprojekte und Robotik-Grundlagen." },
+    "infrared": { "name": "Infrared Sensor", "desc": "Nützlich für Linienverfolgung, Nähe und einfache Signale." },
+    "lidar": { "name": "LiDAR", "desc": "Ein Sensor-Konzept für Mapping und autonome Roboterprojekte." },
+    "drive_2wd": { "name": "2-Wheel Drive", "desc": "Schnell, einfach und agil für erste Programmieraufgaben." },
+    "drive_4wd": { "name": "4-Wheel Drive", "desc": "Stabilere Bewegung für schwerere Builds und gemischtes Terrain." },
+    "tank_tracks": { "name": "Tank Tracks", "desc": "Eine stabile Plattform für Terrain-Experimente." },
+    "omni_wheels": { "name": "Omni-Wheels", "desc": "Ein Bewegungskonzept für 360-Grad-Fahren und fortgeschrittene Steuerung." },
+    "aiva_coach": { "name": "Aiva Coach", "desc": "Ein lokaler Lerncoach, der Lektionen erklärt und beim Debuggen hilft." },
+    "local_voice": { "name": "Local Voice", "desc": "Sprachinteraktion, die direkt auf dem Roboter laufen soll." }
+  },
+  "ui": {
+    "next": "Nächste Komponente",
+    "selected": "Ausgewählt",
+    "save": "Konfiguration speichern",
+    "saved": "Lokal gespeichert",
+    "startFresh": "Neu starten"
+  },
+  "events": {
+    "kicker": "Berlin Workshops",
+    "title": "Hands-on Roboterbau für neugierige Lernende.",
+    "copy": "R0607 Workshops kommen bald nach Berlin. Registriere dein Interesse, damit wir passende Altersgruppen planen können.",
+    "formTitle": "Interesse registrieren",
+    "card": {
+      "title": "Basic Programming mit R0607",
+      "status": "Coming soon",
+      "format": { "label": "Format", "value": "2 Stunden/Woche · 5 Wochen" },
+      "age": { "label": "Alter", "value": "12+ · Altersgruppen" },
+      "location": { "label": "Ort", "value": "Berlin · TBD" }
+    },
+    "faq": {
+      "learn": { "q": "Was wird gebaut?", "a": "Lernende bauen und programmieren einen Roboter, arbeiten mit Sensoren und Antrieb und erleben lokale KI in Robotik-Projekten." },
+      "bring": { "q": "Was muss man mitbringen?", "a": "Details folgen vor der ersten Gruppe. Ziel ist ein praktisches und gut geführtes Setup." },
+      "cost": { "q": "Was kostet es?", "a": "Der Preis ist noch offen, während das Workshop-Format validiert wird." },
+      "list": { "q": "Ist das eine Warteliste?", "a": "Es ist eine Interessensliste. Wir melden uns, wenn Berliner Gruppen bereit sind." }
+    },
+    "form": {
+      "email": "E-Mail",
+      "ageGroup": "Altersgruppe",
+      "choose": "Altersgruppe wählen",
+      "consent": "Ich stimme zu, zu R0607 Workshops kontaktiert zu werden.",
+      "submit": "Interesse registrieren",
+      "submitting": "Wird gesendet...",
+      "messages": {
+        "invalid": "Bitte prüfe das Formular und versuche es erneut.",
+        "queued": "Danke. Das Interesse wurde für diesen Build lokal erfasst; verbinde Supabase, um Einsendungen zu speichern.",
+        "registered": "Danke. Du bist auf der Interessensliste.",
+        "duplicate": "Diese E-Mail ist bereits registriert.",
+        "rate_limited": "Zu viele Einsendungen. Bitte später erneut versuchen.",
+        "unknown": "Etwas ist schiefgelaufen. Bitte später erneut versuchen."
+      }
+    }
+  },
+  "education": {
+    "kicker": "Schulen und Institutionen",
+    "title": "Robotik- und KI-Lernen für den Unterricht.",
+    "copy": "R0607 startet mit Berliner Workshop-Gruppen und entwickelt sich in Richtung zukünftiger Schul-Piloten, sobald Material und Hardware stabil genug sind.",
+    "formTitle": "Kontakt für Schul-Pilot",
+    "emailFallback": "Lieber per E-Mail? Kontakt: hello@r0607.com.",
+    "outcomes": {
+      "programming": { "title": "Programmiergrundlagen", "copy": "Lernende schreiben Code, der einen physischen Roboter sichtbar verändert." },
+      "robotics": { "title": "Robotik und Sensoren", "copy": "Hardware-Entscheidungen verbinden Motoren, Sensoren, Wahrnehmung und Feedback." },
+      "debugging": { "title": "Debugging und Systemdenken", "copy": "Schüler lernen, Code, Mechanik, Energie und Daten zusammen zu betrachten." },
+      "ai": { "title": "KI-Kompetenz", "copy": "Lokale KI macht modernes Assistenzverhalten greifbar, ohne das System zu verstecken." },
+      "teamwork": { "title": "Teamwork", "copy": "Workshops unterstützen projektbasiertes Lernen, Kommunikation und Iteration." },
+      "privacy": { "title": "Datenschutzbewusstes Computing", "copy": "Die Local-first-Architektur macht verantwortungsvolle Technologie konkret diskutierbar." }
+    },
+    "pilot": { "title": "Pilotformat", "copy": "Kleine Berliner Workshops kommen zuerst. Schul-Piloten können folgen, sobald das Format ausgereift ist, mit klaren Altersgruppen und praktischen Anforderungen." },
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "submit": "Kontaktanfrage senden",
+      "submitting": "Wird gesendet...",
+      "messages": {
+        "invalid": "Bitte gültigen Namen und E-Mail eintragen.",
+        "sent": "Danke. Wir melden uns.",
+        "rate_limited": "Zu viele Einsendungen. Bitte später erneut versuchen.",
+        "unknown": "Etwas ist schiefgelaufen. Bitte später erneut versuchen."
+      }
+    }
+  },
+  "learn": {
+    "kicker": "Aiva, lokale KI, Learning Hub",
+    "title": "Dein persönlicher Roboter-Lerncoach.",
+    "copy": "R0607 kombiniert physischen Roboter, lokale KI, Sprache und Kurse in einem Learning Hub direkt auf dem Roboter.",
+    "sections": {
+      "personal": { "title": "Dein persönlicher Roboter", "copy": "Der Roboter ist der eigene Build des Lernenden. Entscheidungen, Projekte und Aiva-Interaktion sollen persönlich wirken." },
+      "aiva": { "title": "Aiva", "copy": "Aiva ist Persönlichkeit und Lerncoach des Roboters. Sie erklärt Lektionen, hilft beim Debuggen und schlägt nächste Schritte im Kontext vor." },
+      "privacy": { "title": "Local-first Datenschutz", "copy": "LLM und Spracherlebnis laufen direkt auf dem Roboter. KI-Chat- und Sprachlerndaten werden nicht an Cloud-KI-Anbieter gesendet." },
+      "hub": { "title": "Learning Hub", "copy": "Der Learning Hub ist eine Web-App vom Roboter. Er enthält KI-Chat, Sprache, Kurse, Guides und Projektmaterial." },
+      "path": { "title": "Lernpfad", "copy": "Der Lehrplan führt von Programmiergrundlagen zu Robotik, Game Development, Machine Learning, KI-Entwicklung und autonomen Robotern." },
+      "parents": { "title": "Für Eltern und Schulen", "copy": "Das Programm erklärt Altersempfehlungen, Workshop-Format, Sicherheitsgrenzen, Datenschutz und Voraussetzungen." }
+    }
+  },
+  "privacy": {
+    "title": "Datenschutz",
+    "intro": { "title": "Überblick", "copy": "R0607 erhebt in der Launch-Phase so wenig Website-Daten wie möglich." },
+    "signup": { "title": "Workshop-Interesse", "copy": "Das Formular erfasst E-Mail, Altersgruppe, Sprache, Zustimmung und Zeitstempel, damit wir zu Berliner Workshops kontaktieren können." },
+    "localAi": { "title": "Lokale KI", "copy": "Aiva, LLM, Sprachfunktionen und Learning Hub laufen direkt auf dem Roboter. KI-Chat- und Sprachlerndaten werden nicht an Cloud-KI-Anbieter gesendet." },
+    "rights": { "title": "Löschung", "copy": "Du kannst die Löschung von Workshop-Interessensdaten per E-Mail an hello@r0607.com anfragen oder den Abmelde-Link in deiner Bestätigungs-E-Mail verwenden." },
+    "hosting": { "title": "Hosting", "copy": "Die Website ist für Vercel Hosting und Supabase in der EU-Region zur Speicherung von Workshop-Interesse vorgesehen." }
+  },
+  "imprint": {
+    "title": "Impressum",
+    "operator": {
+      "heading": "Betreiber",
+      "name": "[Betreibername — vor Launch eintragen]",
+      "street": "[Straße und Hausnummer]",
+      "city": "[PLZ und Ort]",
+      "country": "Deutschland"
+    },
+    "responsible": {
+      "heading": "Verantwortliche Person",
+      "name": "[Vollständiger Name der verantwortlichen Person]"
+    },
+    "contact": {
+      "heading": "Kontakt",
+      "email": "hello@r0607.com"
+    },
+    "note": {
+      "heading": "Hinweis",
+      "copy": "Diese Website ist ein Lernprojekt. Workshop-Inhalte und Produktdetails können sich ändern."
+    }
+  }
+}
