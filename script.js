@@ -22,7 +22,7 @@ function setCubeSize() {
   const viewport = window.visualViewport || window;
   const width = viewport.width || window.innerWidth;
   const height = viewport.height || window.innerHeight;
-  const cubeSize = Math.floor(Math.min(width, height) * 0.5);
+  const cubeSize = Math.floor(Math.min(width, height) * 0.45);
 
   root.style.setProperty("--cube-size", `${cubeSize}px`);
 }
