@@ -2,11 +2,61 @@
 
 import { OrbitControls, Environment } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
 import { Suspense, useRef } from "react";
 import type { MutableRefObject } from "react";
 import type { Group } from "three";
 
 import type { RobotConfig } from "@/lib/robot-config";
+
+// THREE.Clock was deprecated in r183; @react-three/fiber v9 still creates one
+// internally. We replace it at module level — before Canvas ever mounts — with
+// a minimal shim that has the same interface but omits the deprecation warning.
+class _ClockShim {
+  autoStart: boolean;
+  startTime = 0;
+  oldTime = 0;
+  elapsedTime = 0;
+  running = false;
+
+  constructor(autoStart = true) {
+    this.autoStart = autoStart;
+  }
+
+  start() {
+    this.startTime = performance.now();
+    this.oldTime = this.startTime;
+    this.elapsedTime = 0;
+    this.running = true;
+  }
+
+  stop() {
+    this.getElapsedTime();
+    this.running = false;
+    this.autoStart = false;
+  }
+
+  getElapsedTime() {
+    this.getDelta();
+    return this.elapsedTime;
+  }
+
+  getDelta() {
+    if (this.autoStart && !this.running) {
+      this.start();
+      return 0;
+    }
+    if (!this.running) return 0;
+    const now = performance.now();
+    const diff = (now - this.oldTime) / 1000;
+    this.oldTime = now;
+    this.elapsedTime += diff;
+    return diff;
+  }
+}
+
+(THREE as unknown as Record<string, unknown>).Clock = _ClockShim;
+
 
 /**
  * Wraps optional robot parts so they lerp in from 2 units above on mount,
