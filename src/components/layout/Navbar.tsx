@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/providers/ThemeProvider";
 import { useState, useEffect } from "react";
 
 import type { Locale } from "@/i18n/routing";
@@ -25,8 +25,9 @@ export function Navbar({ locale }: { locale: Locale }) {
   const languageHref = pathname.replace(/^\/(en|de)/, `/${nextLocale}`);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Close drawer on route change
+  // Close drawer on route change.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobileOpen(false);
   }, [pathname]);
 
@@ -87,7 +88,7 @@ export function Navbar({ locale }: { locale: Locale }) {
               onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
               className="focus-ring grid size-10 place-items-center rounded-md border border-border bg-surface text-muted transition hover:border-cyan-soft hover:text-foreground"
             >
-              {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              {resolvedTheme === "dark" ? <Sun size={18} /> : resolvedTheme === "light" ? <Moon size={18} /> : null}
             </button>
 
             {/* Hamburger — mobile only */}
@@ -172,7 +173,7 @@ export function Navbar({ locale }: { locale: Locale }) {
                   onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
                   className="focus-ring flex items-center gap-2 rounded-md border border-border bg-surface px-4 py-2 text-sm text-muted transition hover:border-cyan-soft hover:text-foreground"
                 >
-                  {resolvedTheme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                  {resolvedTheme === "dark" ? <Sun size={16} /> : resolvedTheme === "light" ? <Moon size={16} /> : null}
                   {t("theme")}
                 </button>
               </div>

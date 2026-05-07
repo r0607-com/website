@@ -13,6 +13,7 @@ import {
   perceptionOptions,
   powerOptions,
   robotStorageKey,
+  selectedCount,
   type ComponentOption,
   type RobotConfig,
 } from "@/lib/robot-config";
@@ -45,6 +46,9 @@ function TypingText() {
         const t = setTimeout(() => setText((s) => s.slice(0, -1)), ERASE_DELAY_MS);
         return () => clearTimeout(t);
       }
+      // Intentional state update at end of erase cycle; no infinite loop risk
+      // because the next render will be in the `typing` branch, not here.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setWordIdx((i) => (i + 1) % TYPING_WORDS.length);
       setTyping(true);
     }
@@ -110,10 +114,6 @@ const stations: Station[] = [
   { id: "motion", kind: "single", options: motionOptions },
   { id: "ai", kind: "single", options: aiOptions },
 ];
-
-function selectedCount(config: RobotConfig) {
-  return [config.power, config.motion, config.ai, ...config.perception].filter(Boolean).length;
-}
 
 // ─── Main component ───────────────────────────────────────────────────────────
 

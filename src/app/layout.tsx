@@ -37,6 +37,8 @@ export const metadata: Metadata = {
   },
 };
 
+const themeScript = `(function(){try{var t=localStorage.getItem('theme')||'dark';if(t==='system')t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.classList.remove('light','dark');document.documentElement.classList.add(t);}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,6 +50,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${orbitron.variable} ${dmSans.variable} ${jetBrainsMono.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

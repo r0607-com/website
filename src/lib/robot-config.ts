@@ -64,3 +64,8 @@ export const aiOptions: ComponentOption[] = [
 export const robotStorageKey = "r0607.robot-config.v1";
 
 export const ageGroups = ["12-13", "14-15", "16-17", "18-19", "20+"] as const;
+
+/** Counts the total number of selected components across all stations. */
+export function selectedCount(config: RobotConfig): number {
+  return [config.power, config.motion, config.ai, ...config.perception].filter(Boolean).length;
+}
