@@ -180,7 +180,7 @@ export function RobotBuilder() {
 
   return (
     <main className="tron-grid crosshair-cursor pt-16">
-      <section className="relative mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_420px] lg:px-8">
+      <section className="relative mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:px-8">
         <FloatingShapes />
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -230,7 +230,10 @@ export function RobotBuilder() {
             ))}
           </div>
         </motion.div>
-        <RobotPanel config={config} selected={selectedCount(config)} />
+        {/* Mobile/tablet only — desktop uses the sticky sidebar aside below */}
+        <div className="lg:hidden">
+          <RobotPanel config={config} selected={selectedCount(config)} />
+        </div>
       </section>
 
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-20 sm:px-6 lg:grid-cols-[1fr_420px] lg:px-8">
