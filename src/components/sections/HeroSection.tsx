@@ -19,12 +19,8 @@ export async function HeroSection() {
           <span className="size-1.5 animate-pulse rounded-full bg-green-soft" aria-hidden="true" />
           {t("hero.badge")}
         </div>
-        <h1 className="font-display text-[clamp(4rem,15vw,10rem)] font-bold leading-none tracking-tight">
-          <span className="text-foreground">R</span>
-          <span className="text-cyan-soft drop-shadow-[0_0_32px_var(--cyan-soft)]">0</span>
-          <span className="text-foreground">6</span>
-          <span className="text-cyan-soft drop-shadow-[0_0_32px_var(--cyan-soft)]">0</span>
-          <span className="text-foreground">7</span>
+        <h1 className="font-display text-[clamp(4rem,15vw,10rem)] font-black leading-none tracking-tight">
+          <span className="logo-gradient">R0607</span>
         </h1>
         <p className="mt-4 text-2xl font-semibold text-foreground sm:text-3xl">
           {t("hero.heading")}{" "}

@@ -53,7 +53,7 @@
     "sensors": {
       "kicker": "04 / Sensoren",
       "title": "Sensoren",
-      "copy": "Sensoren geben dem Roboter Wahrnehmung für seine Umgebung. Du kannst sie alle kombinieren — das Gehirn übernimmt die Multi-Sensor-Fusion. Wähle eine beliebige Kombination, um zu sehen, wie sie aussehen."
+      "copy": "Gib deinem Roboter Wahrnehmung. Wähle einen Sensor, um zu erkunden, wie er funktioniert — R0607 unterstützt alle gleichzeitig und ist mit jedem Linux-kompatiblen Sensor erweiterbar."
     },
     "languages": {
       "kicker": "05 / Programmierung",
@@ -161,45 +161,54 @@
         "Gripping & manipulation"
       ]
     },
-    "rgb_camera": {
-      "name": "RGB Camera",
-      "desc": "Eine Standard-RGB-Weitwinkelkamera. Für visuelle Erkennung, Farbverfolgung und OpenCV-Bildverarbeitungsprojekte."
-    },
     "stereo_camera": {
       "name": "Stereo Camera",
-      "desc": "Zwei synchronisierte Kameras für Tiefenschätzung. Ermöglicht räumliche Wahrnehmung ohne dedizierte Tiefenhardware."
-    },
-    "depth_camera": {
-      "name": "Depth Camera",
-      "desc": "Ein Time-of-Flight-Sensor, der eine dichte 3D-Tiefenkarte erzeugt. Ideal für Hindernisvermeidung und Umgebungs-Mapping."
+      "desc": "Zwei synchronisierte Linsen für passive Tiefenschätzung und räumliche Wahrnehmung — ohne dedizierte Tiefenhardware.",
+      "specs": [
+        "Duale Linsen für Tiefenwahrnehmung",
+        "Räumliches Mapping",
+        "Ohne dedizierte Hardware"
+      ]
     },
     "ultrasound": {
       "name": "Ultraschall",
-      "desc": "Einfache, zuverlässige Abstandsmessung mit Schallimpulsen. Ein klassischer Sensor für Einsteiger in die Robotik-Grundlagen."
+      "desc": "Einfache, zuverlässige Abstandsmessung mit Schallimpulsen. Ein klassischer Sensor für Einsteiger in die Robotik-Grundlagen.",
+      "specs": [
+        "Schall-Abstandsmessung",
+        "2 cm – 4 m Reichweite",
+        "Sparsam, anfängerfreundlich"
+      ]
     },
     "infrared": {
       "name": "Infrarot",
-      "desc": "Kurzstrecken-Näherungserkennung mit Infrarotlicht. Leicht und stromsparend für Kantenerkennung und Linienfolgen."
+      "desc": "Kurzstrecken-Näherungserkennung mit Infrarotlicht. Leicht und stromsparend für Kantenerkennung und Linienfolgen.",
+      "specs": [
+        "Kurzstrecken-Näherung",
+        "Linienfolgen & Kantenerkennung",
+        "Leichtgewichtig"
+      ]
     },
     "lidar": {
       "name": "LiDAR",
-      "desc": "Ein 360° rotierender Laserscanner, der eine präzise 2D-Karte der Umgebung des Roboters erstellt. Der Goldstandard für autonome Navigation."
-    },
-    "microphone": {
-      "name": "Mikrofon-Array",
-      "desc": "Mehrdirektionales Mikrofon für Sprachbefehle und Geräuschlokalisierung — ein wichtiger Eingang für Aivas Sprachinteraktion."
+      "desc": "360° rotierender Laserscanner, der eine präzise 2D-Karte der Umgebung des Roboters erstellt. Der Goldstandard für autonome Navigation.",
+      "specs": [
+        "360° Laserscan",
+        "Präzise 2D-Umgebungskarte",
+        "Goldstandard für Navigation"
+      ]
     },
     "imu": {
       "name": "IMU / Gyroscope",
-      "desc": "Erfasst Orientierung, Beschleunigung und Winkelgeschwindigkeit. Essenziell für Balance-Regelung und präzise Bewegung."
+      "desc": "Erfasst Orientierung, Beschleunigung und Winkelgeschwindigkeit. Essenziell für Balance-Regelung und präzise Bewegung.",
+      "specs": [
+        "Orientierung + Beschleunigung",
+        "Winkelgeschwindigkeits-Tracking",
+        "Essenziell für Balance"
+      ]
     },
-    "temperature": {
-      "name": "Temperatursensor",
-      "desc": "Überwacht Umgebungs- und Bauteiltemperatur. Nützlich für Umweltsensorik und thermischen Schutz."
-    },
-    "gps": {
-      "name": "GPS-Modul",
-      "desc": "Positionsbestimmung im Freien für autonome Navigation über längere Distanzen. Arbeitet mit Mapping- und Wegpunktsystemen."
+    "sensor_more": {
+      "name": "Viele mehr",
+      "desc": "R0607 unterstützt jeden Linux-kompatiblen Sensor. GPS-Module, Temperatursensoren, Mikrofon-Arrays, Tiefenkameras, Gassensoren und mehr — die Plattform ist vollständig erweiterbar."
     },
     "python": {
       "name": "Python",

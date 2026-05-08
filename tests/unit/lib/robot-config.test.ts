@@ -4,7 +4,6 @@ import {
   brainOptions,
   defaultSelections,
   energyOptions,
-  languageOptions,
   movementOptions,
   sensorOptions,
 } from "@/lib/robot-config";
@@ -56,8 +55,8 @@ describe("movementOptions", () => {
 });
 
 describe("sensorOptions", () => {
-  it("has at least 8 sensors", () => {
-    expect(sensorOptions.length).toBeGreaterThanOrEqual(8);
+  it("has exactly 6 sensors", () => {
+    expect(sensorOptions).toHaveLength(6);
   });
 
   it("all sensors belong to sensors station", () => {
@@ -65,27 +64,14 @@ describe("sensorOptions", () => {
       expect(sensor.station).toBe("sensors");
     });
   });
-});
 
-describe("languageOptions", () => {
-  it("has exactly 4 languages", () => {
-    expect(languageOptions).toHaveLength(4);
-  });
-
-  it("each has useCases array", () => {
-    languageOptions.forEach((language) => {
-      expect(Array.isArray(language.useCases)).toBe(true);
-      expect(language.useCases.length).toBeGreaterThan(0);
-    });
+  it("includes sensor_more as the last option", () => {
+    expect(sensorOptions[sensorOptions.length - 1].id).toBe("sensor_more");
   });
 });
 
 describe("defaultSelections", () => {
   it("brain defaults to brain_basic", () => {
     expect(defaultSelections.brain).toBe("brain_basic");
-  });
-
-  it("sensors defaults to empty array", () => {
-    expect(defaultSelections.sensors).toEqual([]);
   });
 });

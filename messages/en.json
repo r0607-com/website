@@ -53,7 +53,7 @@
     "sensors": {
       "kicker": "04 / Sensors",
       "title": "Sensors",
-      "copy": "Sensors give the robot awareness of its environment. You can combine all of them — the brain handles multi-sensor fusion. Select any combination to see what they look like."
+      "copy": "Give your robot awareness. Select a sensor to explore how it works — R0607 supports all of them simultaneously and is compatible with any Linux-compatible sensor."
     },
     "languages": {
       "kicker": "05 / Programming",
@@ -161,45 +161,54 @@
         "Gripping & manipulation"
       ]
     },
-    "rgb_camera": {
-      "name": "RGB Camera",
-      "desc": "A standard wide-angle RGB camera. Used for visual detection, color tracking, and OpenCV image processing projects."
-    },
     "stereo_camera": {
       "name": "Stereo Camera",
-      "desc": "Two synchronized cameras for depth estimation. Enables spatial awareness without dedicated depth hardware."
-    },
-    "depth_camera": {
-      "name": "Depth Camera",
-      "desc": "Time-of-Flight sensor that produces a dense 3D depth map. Ideal for obstacle avoidance and environment mapping."
+      "desc": "Two synchronized lenses for passive depth estimation and spatial awareness — no dedicated depth hardware needed.",
+      "specs": [
+        "Dual-lens depth perception",
+        "Spatial mapping",
+        "Works without dedicated hardware"
+      ]
     },
     "ultrasound": {
       "name": "Ultrasound",
-      "desc": "Simple, reliable distance measurement using sound pulses. A classic sensor for beginners learning robotics fundamentals."
+      "desc": "Simple, reliable distance measurement using sound pulses. A classic sensor for beginners learning robotics fundamentals.",
+      "specs": [
+        "Sound-pulse distance",
+        "2 cm – 4 m range",
+        "Low power, beginner-friendly"
+      ]
     },
     "infrared": {
       "name": "Infrared",
-      "desc": "Short-range proximity detection using infrared light. Lightweight and low-power for edge detection and line following."
+      "desc": "Short-range proximity detection using infrared light. Lightweight and low-power for edge detection and line following.",
+      "specs": [
+        "Short-range proximity",
+        "Line following & edge detection",
+        "Lightweight"
+      ]
     },
     "lidar": {
       "name": "LiDAR",
-      "desc": "360° spinning laser scanner that builds a precise 2D map of the robot's surroundings. The gold standard for autonomous navigation."
-    },
-    "microphone": {
-      "name": "Microphone Array",
-      "desc": "Multi-directional microphone for voice commands and sound localization — a key input for Aiva voice interaction."
+      "desc": "360° spinning laser scanner that builds a precise 2D map of the robot's surroundings. The gold standard for autonomous navigation.",
+      "specs": [
+        "360° laser scan",
+        "Precise 2D environment map",
+        "Gold standard for navigation"
+      ]
     },
     "imu": {
       "name": "IMU / Gyroscope",
-      "desc": "Tracks orientation, acceleration, and angular velocity. Essential for balance control and precise motion."
+      "desc": "Tracks orientation, acceleration, and angular velocity. Essential for balance control and precise motion.",
+      "specs": [
+        "Orientation + acceleration",
+        "Angular velocity tracking",
+        "Essential for balance control"
+      ]
     },
-    "temperature": {
-      "name": "Temperature Sensor",
-      "desc": "Monitors ambient and component temperature. Useful for environmental sensing and thermal protection."
-    },
-    "gps": {
-      "name": "GPS Module",
-      "desc": "Outdoor positioning for autonomous navigation over longer distances. Works with mapping and waypoint systems."
+    "sensor_more": {
+      "name": "Many More",
+      "desc": "R0607 supports any sensor that runs on Linux. Connect GPS modules, temperature sensors, microphone arrays, depth cameras, gas sensors, and more — the platform is fully extensible."
     },
     "python": {
       "name": "Python",

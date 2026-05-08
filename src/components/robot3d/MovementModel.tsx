@@ -210,7 +210,7 @@ function MovementScene({
   });
 
   return (
-    <group ref={groupRef}>
+    <group ref={groupRef} scale={2.2}>
       {type === "wheels_4wd" && <WheelsScene />}
       {type === "tracks" && <TracksScene />}
       {type === "omni_4" && <OmniScene />}
@@ -227,7 +227,7 @@ export function MovementModel({ option }: { option: string }) {
   const type = VALID_TYPES.includes(option as MovementType) ? (option as MovementType) : "wheels_4wd";
 
   return (
-    <Canvas camera={{ position: [2.5, 1.6, 2.8], fov: 50 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
+    <Canvas camera={{ position: [1.8, 1.2, 2.0], fov: 55 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
       <ambientLight intensity={0.8} />
       <directionalLight position={[3, 4, 2]} intensity={1.1} />
       <Suspense fallback={null}>

@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 interface OptionButtonProps {
   id: string;
   label: string;
-  description: string;
   selected: boolean;
   onClick: () => void;
   icon: LucideIcon;
@@ -20,7 +19,6 @@ interface OptionButtonProps {
 export function OptionButton({
   id,
   label,
-  description,
   selected,
   onClick,
   icon: Icon,
@@ -35,38 +33,35 @@ export function OptionButton({
       onClick={onClick}
       aria-pressed={selected}
       className={cn(
-        "focus-ring group relative w-full rounded-xl border bg-background/70 p-4 text-left transition-all",
-        "hover:border-cyan-soft hover:shadow-[0_0_28px_var(--glow-cyan)]",
+        "focus-ring group relative flex w-full items-center gap-3 rounded-xl border bg-background/70 px-4 py-3 text-left transition-all",
+        "hover:border-cyan-soft hover:shadow-[0_0_20px_var(--glow-cyan)]",
         selected
-          ? "border-cyan-soft bg-surface shadow-[0_0_24px_var(--glow-cyan)]"
+          ? "border-cyan-soft bg-surface shadow-[0_0_18px_var(--glow-cyan)]"
           : "border-border",
         className,
       )}
     >
-      <div className="flex items-start justify-between gap-3">
-        <span
-          className={cn(
-            "grid size-9 flex-shrink-0 place-items-center rounded-lg border transition-colors",
-            selected
-              ? "border-cyan-soft bg-cyan-soft/10 text-cyan-soft"
-              : "border-border bg-surface text-muted",
-          )}
-        >
-          <Icon size={18} aria-hidden="true" />
+      <span
+        className={cn(
+          "grid size-9 flex-shrink-0 place-items-center rounded-lg border transition-colors",
+          selected
+            ? "border-cyan-soft bg-cyan-soft/10 text-cyan-soft"
+            : "border-border bg-surface text-muted",
+        )}
+      >
+        <Icon size={18} aria-hidden="true" />
+      </span>
+      <span className="flex-1 font-display text-sm font-bold text-foreground">{label}</span>
+      {selected ? (
+        <span className="flex-shrink-0 inline-flex items-center gap-1 rounded-md bg-cyan-soft px-2 py-0.5 text-xs font-medium text-background">
+          <Check size={10} aria-hidden="true" />
+          {selectedLabel}
         </span>
-        {selected ? (
-          <span className="inline-flex items-center gap-1 rounded-md bg-cyan-soft px-2 py-0.5 text-xs font-medium text-background">
-            <Check size={11} aria-hidden="true" />
-            {selectedLabel}
-          </span>
-        ) : badge ? (
-          <span className="rounded-md border border-border px-2 py-0.5 text-xs text-muted">
-            {badge}
-          </span>
-        ) : null}
-      </div>
-      <p className="mt-3 font-display text-base font-bold text-foreground">{label}</p>
-      <p className="mt-1 text-sm leading-relaxed text-muted">{description}</p>
+      ) : badge ? (
+        <span className="flex-shrink-0 rounded-md border border-border px-2 py-0.5 text-xs text-muted">
+          {badge}
+        </span>
+      ) : null}
     </button>
   );
 }

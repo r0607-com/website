@@ -52,9 +52,8 @@ export function Navbar({ locale }: { locale: Locale }) {
               +
             </span>
             <span>
-              <span className="font-display text-xl font-bold tracking-normal">
-                R<span className="text-cyan-soft">0</span>6
-                <span className="text-cyan-soft">0</span>7
+              <span className="font-display text-xl font-bold tracking-normal logo-gradient">
+                R0607
               </span>
               <span className="hidden text-xs text-muted sm:block">
                 {t("tagline")}
@@ -134,9 +133,8 @@ export function Navbar({ locale }: { locale: Locale }) {
               aria-label="Navigation menu"
             >
               <div className="mb-8 flex items-center justify-between">
-                <span className="font-display text-lg font-bold">
-                  R<span className="text-cyan-soft">0</span>6
-                  <span className="text-cyan-soft">0</span>7
+                <span className="font-display text-lg font-bold logo-gradient">
+                  R0607
                 </span>
                 <button
                   type="button"

@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { SectionViewer } from "@/components/robot3d/SectionViewer";
 import { ConfigSection } from "@/components/sections/ConfigSection";
@@ -42,21 +42,26 @@ const SensorsModel = dynamic(
   { ssr: false, loading: ModelLoading },
 );
 
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-hidden="true">
+      <div className="flex items-center gap-4 py-2">
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+        <span className="rounded-full border border-border/50 bg-surface/60 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-muted/50">
+          {label}
+        </span>
+        <div className="h-px flex-1 bg-gradient-to-l from-transparent via-border to-transparent" />
+      </div>
+    </div>
+  );
+}
+
 export function RobotSections() {
-  const locale = useLocale();
   const t = useTranslations();
   const [brain, setBrain] = useState<string>(defaultSelections.brain);
   const [energy, setEnergy] = useState<string>(defaultSelections.energy);
   const [movement, setMovement] = useState<string>(defaultSelections.movement);
-  const [sensors, setSensors] = useState<string[]>([...defaultSelections.sensors]);
-
-  function toggleSensor(id: string) {
-    setSensors((previous) =>
-      previous.includes(id)
-        ? previous.filter((sensorId) => sensorId !== id)
-        : [...previous, id],
-    );
-  }
+  const [sensor, setSensor] = useState<string>("stereo_camera");
 
   const brainWithMeta = brainOptions.map((option) => ({
     ...option,
@@ -83,79 +88,71 @@ export function RobotSections() {
     ...option,
     name: t(`components.${option.id}.name`),
     desc: t(`components.${option.id}.desc`),
+    specs: option.specs,
   }));
-
-  const viewerLabels =
-    locale === "de"
-      ? {
-          brain: "3D-Modell des Gehirns",
-          energy: "3D-Modell der Energieversorgung",
-          movement: "3D-Modell der Bewegung",
-          sensors: "3D-Modell der Sensoren",
-        }
-      : {
-          brain: "Brain 3D model",
-          energy: "Energy 3D model",
-          movement: "Movement 3D model",
-          sensors: "Sensors 3D model",
-        };
 
   return (
     <>
       <ConfigSection
         id="brain"
-        kicker={t("sections.brain.kicker")}
+        sectionNumber="01"
+        sectionIndex={0}
         title={t("sections.brain.title")}
         copy={t("sections.brain.copy")}
         options={brainWithMeta}
         selectedIds={brain}
         onSelect={setBrain}
         viewer={
-          <SectionViewer label={viewerLabels.brain}>
+          <SectionViewer label="Brain 3D model">
             <BrainModel tier={brain} />
           </SectionViewer>
         }
       />
+      <SectionDivider label={t("sections.energy.title")} />
       <ConfigSection
         id="energy"
-        kicker={t("sections.energy.kicker")}
+        sectionNumber="02"
+        sectionIndex={1}
         title={t("sections.energy.title")}
         copy={t("sections.energy.copy")}
         options={energyWithMeta}
         selectedIds={energy}
         onSelect={setEnergy}
         viewer={
-          <SectionViewer label={viewerLabels.energy}>
+          <SectionViewer label="Energy 3D model">
             <EnergyModel option={energy} />
           </SectionViewer>
         }
       />
+      <SectionDivider label={t("sections.movement.title")} />
       <ConfigSection
         id="movement"
-        kicker={t("sections.movement.kicker")}
+        sectionNumber="03"
+        sectionIndex={2}
         title={t("sections.movement.title")}
         copy={t("sections.movement.copy")}
         options={movementWithMeta}
         selectedIds={movement}
         onSelect={setMovement}
         viewer={
-          <SectionViewer label={viewerLabels.movement}>
+          <SectionViewer label="Movement 3D model">
             <MovementModel option={movement} />
           </SectionViewer>
         }
       />
+      <SectionDivider label={t("sections.sensors.title")} />
       <ConfigSection
         id="sensors"
-        kicker={t("sections.sensors.kicker")}
+        sectionNumber="04"
+        sectionIndex={3}
         title={t("sections.sensors.title")}
         copy={t("sections.sensors.copy")}
         options={sensorsWithMeta}
-        selectedIds={sensors}
-        multiSelect
-        onSelect={toggleSensor}
+        selectedIds={sensor}
+        onSelect={setSensor}
         viewer={
-          <SectionViewer label={viewerLabels.sensors}>
-            <SensorsModel selected={sensors} />
+          <SectionViewer label="Sensors 3D model">
+            <SensorsModel selected={sensor} />
           </SectionViewer>
         }
       />

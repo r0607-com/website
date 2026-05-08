@@ -2,17 +2,14 @@ import type { LucideIcon } from "lucide-react";
 import {
   BatteryCharging,
   Brain,
-  Camera,
   Cpu,
   Gauge,
   Globe,
-  Mic,
-  Navigation,
+  PackagePlus,
   Radar,
   RotateCcw,
   Satellite,
   Sparkles,
-  Thermometer,
   Waves,
   Zap,
   Code2,
@@ -112,16 +109,41 @@ export const movementOptions: OptionSpec[] = [
 ];
 
 export const sensorOptions: OptionSpec[] = [
-  { id: "rgb_camera", station: "sensors", icon: Camera },
-  { id: "stereo_camera", station: "sensors", icon: Satellite },
-  { id: "depth_camera", station: "sensors", icon: Navigation },
-  { id: "ultrasound", station: "sensors", icon: Waves },
-  { id: "infrared", station: "sensors", icon: Gauge },
-  { id: "lidar", station: "sensors", icon: Radar },
-  { id: "microphone", station: "sensors", icon: Mic },
-  { id: "imu", station: "sensors", icon: Globe },
-  { id: "temperature", station: "sensors", icon: Thermometer },
-  { id: "gps", station: "sensors", icon: Navigation },
+  {
+    id: "stereo_camera",
+    station: "sensors",
+    icon: Satellite,
+    specs: ["Dual-lens depth perception", "Spatial mapping", "Works without dedicated hardware"],
+  },
+  {
+    id: "ultrasound",
+    station: "sensors",
+    icon: Waves,
+    specs: ["Sound-pulse distance", "2 cm – 4 m range", "Low power, beginner-friendly"],
+  },
+  {
+    id: "infrared",
+    station: "sensors",
+    icon: Gauge,
+    specs: ["Short-range proximity", "Line following & edge detection", "Lightweight"],
+  },
+  {
+    id: "lidar",
+    station: "sensors",
+    icon: Radar,
+    specs: ["360° laser scan", "Precise 2D environment map", "Gold standard for navigation"],
+  },
+  {
+    id: "imu",
+    station: "sensors",
+    icon: Globe,
+    specs: ["Orientation + acceleration", "Angular velocity tracking", "Essential for balance control"],
+  },
+  {
+    id: "sensor_more",
+    station: "sensors",
+    icon: PackagePlus,
+  },
 ];
 
 export const languageOptions: LanguageOption[] = [

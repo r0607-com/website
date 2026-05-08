@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono, Orbitron } from "next/font/google";
+import { DM_Sans, JetBrains_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 
-const orbitron = Orbitron({
+const roboto = Roboto({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "900"],
 });
 
 const dmSans = DM_Sans({
@@ -48,7 +48,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${orbitron.variable} ${dmSans.variable} ${jetBrainsMono.variable}`}
+      className={`${roboto.variable} ${dmSans.variable} ${jetBrainsMono.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

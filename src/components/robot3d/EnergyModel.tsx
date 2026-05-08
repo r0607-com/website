@@ -33,7 +33,7 @@ function EnergyScene({
   });
 
   return (
-    <group ref={groupRef}>
+    <group ref={groupRef} scale={2.5}>
       <mesh>
         <boxGeometry args={[width, height, depth]} />
         <meshStandardMaterial
@@ -74,7 +74,7 @@ export function EnergyModel({ option }: { option: string }) {
   const size = option === "battery_big" ? "big" : "small";
 
   return (
-    <Canvas camera={{ position: [2.5, 1.5, 2.5], fov: 45 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
+    <Canvas camera={{ position: [1.6, 1.1, 1.6], fov: 55 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
       <ambientLight intensity={0.8} />
       <directionalLight position={[3, 4, 2]} intensity={1.2} />
       <Suspense fallback={null}>

@@ -100,7 +100,7 @@ function BrainScene({
   });
 
   return (
-    <group ref={groupRef}>
+    <group ref={groupRef} scale={2.2}>
       <mesh position={[0, 0, 0]}>
         <boxGeometry args={[cfg.boardW, cfg.boardH, cfg.boardD]} />
         <meshStandardMaterial
@@ -163,7 +163,7 @@ export function BrainModel({ tier }: { tier: string }) {
   const validTier = tier in TIER_CONFIG ? (tier as BrainTier) : "brain_basic";
 
   return (
-    <Canvas camera={{ position: [2.2, 1.4, 2.2], fov: 48 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
+    <Canvas camera={{ position: [1.6, 1.1, 1.6], fov: 55 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
       <ambientLight intensity={0.8} />
       <directionalLight position={[3, 4, 2]} intensity={1.2} />
       <Suspense fallback={null}>

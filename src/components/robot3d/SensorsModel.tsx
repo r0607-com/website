@@ -14,10 +14,10 @@ import { Suspense, useRef, type MutableRefObject } from "react";
 import type { Group } from "three";
 
 function SensorScene({
-  sensors,
+  sensor,
   isInteractingRef,
 }: {
-  sensors: Set<string>;
+  sensor: string;
   isInteractingRef: MutableRefObject<boolean>;
 }) {
   const groupRef = useRef<Group>(null);
@@ -28,19 +28,15 @@ function SensorScene({
     }
   });
 
-  const showCamera =
-    sensors.has("rgb_camera") || sensors.has("stereo_camera") || sensors.has("depth_camera");
-  const showStereo = sensors.has("stereo_camera");
-  const showUltrasound = sensors.has("ultrasound");
-  const showLidar = sensors.has("lidar");
-  const showInfrared = sensors.has("infrared");
-  const showMic = sensors.has("microphone");
-  const showImu = sensors.has("imu");
-  const showTemp = sensors.has("temperature");
-  const showGps = sensors.has("gps");
+  const showStereo = sensor === "stereo_camera" || sensor === "sensor_more";
+  const showUltrasound = sensor === "ultrasound" || sensor === "sensor_more";
+  const showLidar = sensor === "lidar" || sensor === "sensor_more";
+  const showInfrared = sensor === "infrared" || sensor === "sensor_more";
+  const showImu = sensor === "imu" || sensor === "sensor_more";
 
   return (
-    <group ref={groupRef} scale={1.1}>
+    <group ref={groupRef} scale={2.2}>
+      {/* Robot body */}
       <mesh position={[0, 0.1, 0]}>
         <boxGeometry args={[1.3, 0.55, 0.9]} />
         <meshStandardMaterial
@@ -51,21 +47,20 @@ function SensorScene({
           roughness={0.5}
         />
       </mesh>
-      {showCamera ? (
-        <mesh
-          position={showStereo ? [-0.27, 0.2, -0.48] : [0, 0.2, -0.48]}
-          rotation={[Math.PI / 2, 0, 0]}
-        >
-          <cylinderGeometry args={[0.09, 0.09, 0.12, 20]} />
-          <meshStandardMaterial color="#0f172a" emissive="#f9a8d4" emissiveIntensity={0.9} />
-        </mesh>
-      ) : null}
+      {/* Stereo camera — dual lenses */}
       {showStereo ? (
-        <mesh position={[0.27, 0.2, -0.48]} rotation={[Math.PI / 2, 0, 0]}>
-          <cylinderGeometry args={[0.09, 0.09, 0.12, 20]} />
-          <meshStandardMaterial color="#0f172a" emissive="#f9a8d4" emissiveIntensity={0.9} />
-        </mesh>
+        <>
+          <mesh position={[-0.27, 0.2, -0.48]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.09, 0.09, 0.12, 20]} />
+            <meshStandardMaterial color="#0f172a" emissive="#f9a8d4" emissiveIntensity={0.9} />
+          </mesh>
+          <mesh position={[0.27, 0.2, -0.48]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.09, 0.09, 0.12, 20]} />
+            <meshStandardMaterial color="#0f172a" emissive="#f9a8d4" emissiveIntensity={0.9} />
+          </mesh>
+        </>
       ) : null}
+      {/* Ultrasound — twin transducers */}
       {showUltrasound ? (
         <>
           <mesh position={[-0.2, 0, -0.48]} rotation={[Math.PI / 2, 0, 0]}>
@@ -78,56 +73,40 @@ function SensorScene({
           </mesh>
         </>
       ) : null}
+      {/* LiDAR — spinning disc on top */}
       {showLidar ? (
         <mesh position={[0, 0.46, 0]}>
           <cylinderGeometry args={[0.22, 0.22, 0.09, 30]} />
           <meshStandardMaterial color="#172033" emissive="#7ee8fa" emissiveIntensity={0.75} />
         </mesh>
       ) : null}
+      {/* Infrared — side emitter */}
       {showInfrared ? (
         <mesh position={[-0.68, 0.05, -0.3]}>
           <sphereGeometry args={[0.07, 14, 12]} />
           <meshStandardMaterial color="#111827" emissive="#f9a8d4" emissiveIntensity={0.95} />
         </mesh>
       ) : null}
-      {showMic ? (
-        <mesh position={[0.3, 0.4, 0.25]}>
-          <cylinderGeometry args={[0.05, 0.04, 0.15, 14]} />
-          <meshStandardMaterial color="#0f172a" emissive="#86efac" emissiveIntensity={0.8} />
-        </mesh>
-      ) : null}
+      {/* IMU — small board chip */}
       {showImu ? (
         <mesh position={[0.25, 0.15, 0.25]}>
           <boxGeometry args={[0.1, 0.07, 0.1]} />
           <meshStandardMaterial color="#0f172a" emissive="#fcd34d" emissiveIntensity={0.8} />
         </mesh>
       ) : null}
-      {showTemp ? (
-        <mesh position={[0.68, 0, 0]}>
-          <cylinderGeometry args={[0.03, 0.03, 0.2, 10]} />
-          <meshStandardMaterial color="#111827" emissive="#f97316" emissiveIntensity={0.8} />
-        </mesh>
-      ) : null}
-      {showGps ? (
-        <mesh position={[-0.3, 0.45, -0.2]}>
-          <sphereGeometry args={[0.1, 16, 12]} />
-          <meshStandardMaterial color="#172033" emissive="#60a5fa" emissiveIntensity={0.7} />
-        </mesh>
-      ) : null}
     </group>
   );
 }
 
-export function SensorsModel({ selected }: { selected: string[] }) {
+export function SensorsModel({ selected }: { selected: string }) {
   const isInteractingRef = useRef(false);
-  const sensorSet = new Set(selected);
 
   return (
-    <Canvas camera={{ position: [2.8, 1.8, 3.0], fov: 48 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
+    <Canvas camera={{ position: [1.8, 1.2, 2.0], fov: 55 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
       <ambientLight intensity={0.8} />
       <directionalLight position={[3, 4, 2]} intensity={1.1} />
       <Suspense fallback={null}>
-        <SensorScene sensors={sensorSet} isInteractingRef={isInteractingRef} />
+        <SensorScene sensor={selected} isInteractingRef={isInteractingRef} />
         <Environment preset="night" />
       </Suspense>
       <OrbitControls

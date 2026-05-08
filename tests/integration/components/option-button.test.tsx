@@ -8,17 +8,15 @@ import { OptionButton } from "@/components/ui/OptionButton";
 const defaultProps = {
   id: "brain_basic",
   label: "Basic",
-  description: "Entry-level brain",
   selected: false,
   onClick: vi.fn(),
   icon: Brain,
 };
 
 describe("OptionButton", () => {
-  it("renders label and description", () => {
+  it("renders label", () => {
     render(<OptionButton {...defaultProps} />);
     expect(screen.getByText("Basic")).toBeInTheDocument();
-    expect(screen.getByText("Entry-level brain")).toBeInTheDocument();
   });
 
   it("shows Selected badge when selected", () => {
