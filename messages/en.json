@@ -22,146 +22,227 @@
   },
   "hero": {
     "badge": "Berlin workshops coming soon",
-    "heading": "Build the robot. Learn the future.",
-    "copy": "Assemble a personal robot, choose sensors and motion parts, then meet Aiva, the local AI learning coach running on the robot.",
-    "start": "Start building",
+    "heading": "Build the robot.",
+    "subheading": "Learn the future.",
+    "copy": "Assemble your personal robot, choose sensors and motion systems, then learn with Aiva — a local AI coach running directly on the robot.",
+    "start": "Explore the robot",
     "workshops": "Workshop interest",
     "stats": {
-      "brain": "Robot brain",
-      "code": "Python / C++ / Rust",
-      "aiva": "Aiva on-device",
+      "brain": "On-device AI",
+      "code": "Python · C++ · Rust · Web",
+      "aiva": "Aiva learning coach",
       "privacy": "No cloud AI uploads"
-    }
-  },
-  "robot": {
-    "label": "Current build",
-    "name": "Your R0607",
-    "stats": {
-      "energy": "Energy",
-      "weight": "Weight",
-      "speed": "Speed",
-      "intelligence": "Intelligence",
-      "flexibility": "Flexibility"
     }
   },
   "sections": {
     "brain": {
-      "kicker": "Brain Brick",
-      "title": "The Brain Brick",
-      "tagline": "Choose your computing power.",
-      "copy": "Pick the tier that fits your build. The Brain Brick is the robot's computing center — the place where sensing, code, and learning connect. More compute means smarter AI and faster responses."
+      "kicker": "01 / Brain",
+      "title": "The Brain",
+      "copy": "The brain is a single-board computer that runs the robot's AI, sensors, code, and learning hub. More compute means smarter responses, faster vision, and advanced autonomous behavior."
     },
-    "power": {
-      "kicker": "Power Up",
-      "title": "Power Up",
-      "tagline": "Give it life.",
-      "copy": "Pick the energy system for your build. The website builder is playful, but the choices represent the modular direction of the real robot."
+    "energy": {
+      "kicker": "02 / Energy",
+      "title": "Energy",
+      "copy": "Choose the battery that powers your robot. Both run at 20 V. The bigger battery doubles run time and enables heavier actuators."
     },
-    "perception": {
-      "kicker": "Perception",
-      "title": "Perception",
-      "tagline": "Give it eyes and ears.",
-      "copy": "Select one sensor for your build. Cameras, distance sensing, infrared, and LiDAR unlock different projects and experiments."
+    "movement": {
+      "kicker": "03 / Movement",
+      "title": "Movement",
+      "copy": "Choose how your robot moves. From simple 4-wheel drive to omni-directional wheels, tank tracks, walking legs, or a robotic arm — each opens different projects and challenges."
     },
-    "motion": {
-      "kicker": "Motion",
-      "title": "Motion",
-      "tagline": "Put it in motion.",
-      "copy": "Choose how your robot moves. Wheels are simple and fast, tracks are steady, and omni-wheels unlock side-to-side movement."
+    "sensors": {
+      "kicker": "04 / Sensors",
+      "title": "Sensors",
+      "copy": "Sensors give the robot awareness of its environment. You can combine all of them — the brain handles multi-sensor fusion. Select any combination to see what they look like."
     },
-    "ai": {
-      "kicker": "Intelligence",
-      "title": "Meet Aiva",
-      "tagline": "Program, ask, debug, and learn.",
-      "copy": "Aiva is the robot's personality and learning coach. The LLM, voice experience, and Learning Hub run directly on the robot."
-    },
-    "result": {
-      "kicker": "Your robot",
-      "title": "Build the robot. Learn the future.",
-      "copy": "Save this configuration locally in this browser or start fresh. Nothing in this playful builder is uploaded.",
-      "learnMore": "Learn more"
+    "languages": {
+      "kicker": "05 / Programming",
+      "title": "Programming Languages",
+      "copy": "R0607 supports multiple languages across different use cases. Start with Python for basics, use Web for dashboards, reach for C++ when you need speed, and Rust for safe real-time autonomous systems."
     }
   },
   "components": {
-    "brain_brick": {
-      "name": "Brain Brick",
-      "desc": "The always-included computing core for code, sensors, and local AI experiments."
+    "brain_basic": {
+      "name": "Basic",
+      "desc": "The entry-level brain. Great for learning Python, working with sensors, and running Aiva for interactive lessons.",
+      "specs": [
+        "8 GB shared RAM",
+        "CPU + GPU",
+        "128 GB SSD"
+      ]
     },
-    "brain_standard": {
-      "name": "Brain Brick Standard",
-      "desc": "The entry-level computing core. Great for learning basics, sensor projects, and early programming challenges."
+    "brain_mega": {
+      "name": "Mega",
+      "desc": "More power for sensor fusion, faster Aiva responses, and running multiple robot processes in parallel.",
+      "specs": [
+        "16 GB shared RAM",
+        "CPU + GPU",
+        "256 GB SSD"
+      ]
     },
-    "brain_plus": {
-      "name": "Brain Brick Plus",
-      "desc": "More compute for real-time sensor fusion, faster Aiva responses, and intermediate AI experiments."
+    "brain_super": {
+      "name": "Super",
+      "desc": "Runs real-time computer vision, larger local AI models, and handles complex multi-sensor pipelines.",
+      "specs": [
+        "64 GB shared RAM",
+        "Enhanced CPU + GPU",
+        "512 GB SSD"
+      ]
     },
     "brain_ultra": {
-      "name": "Brain Brick Ultra",
-      "desc": "Maximum on-device compute for advanced local AI, computer vision, and autonomous robot projects."
+      "name": "Ultra",
+      "desc": "Maximum on-device compute for advanced autonomous AI, OpenCV+CUDA vision, and research-grade robotics.",
+      "specs": [
+        "128 GB shared RAM",
+        "Top-tier CPU + GPU",
+        "1 TB SSD"
+      ]
     },
-    "battery_standard": {
-      "name": "Standard Battery",
-      "desc": "A simple power option for focused indoor workshop builds."
+    "battery_small": {
+      "name": "Small Battery",
+      "desc": "Compact and light. Ideal for smaller builds where weight matters or for learning sessions.",
+      "specs": [
+        "20 V",
+        "2 Ah",
+        "40 Wh capacity"
+      ]
     },
-    "battery_extended": {
-      "name": "Extended Battery",
-      "desc": "Longer runtime for bigger experiments and extended learning sessions."
+    "battery_big": {
+      "name": "Big Battery",
+      "desc": "Double the run time. Powers heavier actuators and supports longer autonomous operation.",
+      "specs": [
+        "20 V",
+        "4 Ah",
+        "80 Wh capacity"
+      ]
     },
-    "battery_outdoor": {
-      "name": "Outdoor Charging",
-      "desc": "A rugged power concept for outside projects and longer field tests."
+    "wheels_4wd": {
+      "name": "4 Wheel Car",
+      "desc": "Classic 4-wheel drive with one drive motor and one steering servo. Fast, simple, and a great introduction to drivetrain programming.",
+      "specs": [
+        "1 drive motor",
+        "1 steering servo",
+        "4 wheels"
+      ]
+    },
+    "tracks": {
+      "name": "Tank Tracks",
+      "desc": "Two independently driven tracks for powerful, stable movement over rough terrain and up inclines.",
+      "specs": [
+        "2 independent motors",
+        "Tank-style tracks",
+        "High traction"
+      ]
+    },
+    "omni_4": {
+      "name": "4 Omni Wheels",
+      "desc": "Four motorized omni/mecanum wheels that enable full 360° lateral movement — strafe sideways, spin in place, or combine for complex paths.",
+      "specs": [
+        "4 motors",
+        "Mecanum/omni wheels",
+        "360° lateral movement"
+      ]
+    },
+    "walker": {
+      "name": "Walker",
+      "desc": "Articulated legs for all-terrain movement. A great challenge for learning kinematics, gait patterns, and servo coordination.",
+      "specs": [
+        "4 motors",
+        "Articulated legs",
+        "All-terrain"
+      ]
+    },
+    "robotic_arm": {
+      "name": "Robotic Arm",
+      "desc": "A multi-axis robotic arm for gripping, picking, and precise manipulation. Perfect for learning inverse kinematics.",
+      "specs": [
+        "4 servo motors",
+        "Multi-axis arm",
+        "Gripping & manipulation"
+      ]
     },
     "rgb_camera": {
       "name": "RGB Camera",
-      "desc": "Adds basic visual sensing for image projects and robot perspective."
+      "desc": "A standard wide-angle RGB camera. Used for visual detection, color tracking, and OpenCV image processing projects."
     },
     "stereo_camera": {
       "name": "Stereo Camera",
-      "desc": "Adds depth perception so the robot can reason about distance."
+      "desc": "Two synchronized cameras for depth estimation. Enables spatial awareness without dedicated depth hardware."
+    },
+    "depth_camera": {
+      "name": "Depth Camera",
+      "desc": "Time-of-Flight sensor that produces a dense 3D depth map. Ideal for obstacle avoidance and environment mapping."
     },
     "ultrasound": {
-      "name": "Ultrasound Sensor",
-      "desc": "Classic distance sensing for obstacle projects and beginner robotics."
+      "name": "Ultrasound",
+      "desc": "Simple, reliable distance measurement using sound pulses. A classic sensor for beginners learning robotics fundamentals."
     },
     "infrared": {
-      "name": "Infrared Sensor",
-      "desc": "Useful for line tracking, proximity experiments, and simple signals."
+      "name": "Infrared",
+      "desc": "Short-range proximity detection using infrared light. Lightweight and low-power for edge detection and line following."
     },
     "lidar": {
       "name": "LiDAR",
-      "desc": "A scanning sensor concept for mapping and autonomous robot projects."
+      "desc": "360° spinning laser scanner that builds a precise 2D map of the robot's surroundings. The gold standard for autonomous navigation."
     },
-    "drive_2wd": {
-      "name": "2-Wheel Drive",
-      "desc": "Fast, simple, and agile for early programming challenges."
+    "microphone": {
+      "name": "Microphone Array",
+      "desc": "Multi-directional microphone for voice commands and sound localization — a key input for Aiva voice interaction."
     },
-    "drive_4wd": {
-      "name": "4-Wheel Drive",
-      "desc": "More stable movement for heavier builds and mixed terrain."
+    "imu": {
+      "name": "IMU / Gyroscope",
+      "desc": "Tracks orientation, acceleration, and angular velocity. Essential for balance control and precise motion."
     },
-    "tank_tracks": {
-      "name": "Tank Tracks",
-      "desc": "A steady motion platform for terrain experiments."
+    "temperature": {
+      "name": "Temperature Sensor",
+      "desc": "Monitors ambient and component temperature. Useful for environmental sensing and thermal protection."
     },
-    "omni_wheels": {
-      "name": "Omni-Wheels",
-      "desc": "A movement concept for 360 degree driving and advanced control."
+    "gps": {
+      "name": "GPS Module",
+      "desc": "Outdoor positioning for autonomous navigation over longer distances. Works with mapping and waypoint systems."
     },
-    "aiva_coach": {
-      "name": "Aiva Coach",
-      "desc": "A local learning coach that explains lessons and helps debug code."
+    "python": {
+      "name": "Python",
+      "desc": "The best starting point. Python has a massive ecosystem for robotics, machine learning, and scripting — including ROS2, TensorFlow, and PyTorch.",
+      "useCases": [
+        "Scripting & automation",
+        "Sensor data processing",
+        "Machine learning"
+      ]
     },
-    "local_voice": {
-      "name": "Local Voice",
-      "desc": "Voice interaction designed to run directly on the robot."
+    "web": {
+      "name": "Web (HTML · CSS · JS · TypeScript)",
+      "desc": "Build the robot's dashboard, control interfaces, and data visualizations. The Learning Hub itself is a Next.js web app running on the robot.",
+      "useCases": [
+        "Robot dashboard UI",
+        "REST APIs",
+        "Real-time data visualization"
+      ]
+    },
+    "cpp": {
+      "name": "C++",
+      "desc": "High-performance real-time code. Use OpenCV+CUDA for fast computer vision pipelines, low-latency motor control, and high-performance algorithms.",
+      "useCases": [
+        "Real-time computer vision (OpenCV+CUDA)",
+        "Low-latency motor control",
+        "High-performance algorithms"
+      ]
+    },
+    "rust": {
+      "name": "Rust",
+      "desc": "Memory-safe systems programming for real-time autonomous robotics. Rust eliminates entire classes of bugs at compile time — critical for embedded and safety-critical code.",
+      "useCases": [
+        "Safe real-time autonomous control",
+        "Embedded systems",
+        "Memory-safe firmware"
+      ]
     }
   },
   "ui": {
-    "next": "Next component",
     "selected": "Selected",
-    "save": "Save configuration",
-    "saved": "Saved locally",
-    "startFresh": "Start fresh"
+    "selectOption": "Select option",
+    "learnMore": "Learn more",
+    "exploreSections": "Explore sections"
   },
   "events": {
     "kicker": "Berlin workshops",
@@ -210,13 +291,13 @@
       "submit": "Register interest",
       "submitting": "Submitting...",
       "messages": {
-          "invalid": "Please check the form and try again.",
-          "queued": "Thanks. Your interest was recorded locally for this build; connect Supabase to store submissions.",
-          "registered": "Thanks. You are on the interest list.",
-          "duplicate": "This email is already registered.",
-          "rate_limited": "Too many submissions. Please try again later.",
-          "unknown": "Something went wrong. Please try again later."
-        }
+        "invalid": "Please check the form and try again.",
+        "queued": "Thanks. Your interest was recorded locally for this build; connect Supabase to store submissions.",
+        "registered": "Thanks. You are on the interest list.",
+        "duplicate": "This email is already registered.",
+        "rate_limited": "Too many submissions. Please try again later.",
+        "unknown": "Something went wrong. Please try again later."
+      }
     }
   },
   "education": {

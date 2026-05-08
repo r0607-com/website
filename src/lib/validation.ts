@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { ageGroups } from "./robot-config";
+export const ageGroups = ["12-13", "14-15", "16-17", "18-19", "20+"] as const;
 
 export const workshopSignupSchema = z.object({
   email: z.string().trim().email(),

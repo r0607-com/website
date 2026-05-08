@@ -5,134 +5,167 @@ import {
   Camera,
   Cpu,
   Gauge,
+  Globe,
+  Mic,
+  Navigation,
   Radar,
   RotateCcw,
   Satellite,
   Sparkles,
+  Thermometer,
   Waves,
   Zap,
+  Code2,
+  GitBranch,
+  Terminal,
+  Cog,
 } from "lucide-react";
 
-export type StationId = "brain" | "power" | "perception" | "motion" | "ai";
+export type StationId = "brain" | "energy" | "movement" | "sensors";
 
-export type ComponentOption = {
+export type OptionSpec = {
   id: string;
   station: StationId;
   icon: LucideIcon;
+  specs?: string[];
 };
 
-export type RobotConfig = {
-  /** Selected brain tier — always has a value; defaults to brain_standard. */
-  brain: string | null;
-  power: string | null;
-  /** Single perception sensor (array kept for 3-D model compatibility). */
-  perception: string[];
-  motion: string | null;
-  ai: string | null;
+export type LanguageOption = {
+  id: string;
+  icon: LucideIcon;
+  useCases: string[];
 };
 
-export type RobotStats = {
-  energy: number;      // 0–100
-  weight: number;      // 0–100 (higher = heavier)
-  speed: number;       // 0–100
-  intelligence: number;// 0–100
-  flexibility: number; // 0–100
-};
-
-export const defaultRobotConfig: RobotConfig = {
-  brain: "brain_standard",
-  power: null,
-  perception: [],
-  motion: null,
-  ai: null,
-};
-
-export const brainOptions: ComponentOption[] = [
-  { id: "brain_standard", station: "brain", icon: Brain },
-  { id: "brain_plus",     station: "brain", icon: Cpu },
-  { id: "brain_ultra",    station: "brain", icon: Sparkles },
+export const brainOptions: OptionSpec[] = [
+  {
+    id: "brain_basic",
+    station: "brain",
+    icon: Brain,
+    specs: ["8 GB shared RAM", "CPU + GPU", "128 GB SSD"],
+  },
+  {
+    id: "brain_mega",
+    station: "brain",
+    icon: Cpu,
+    specs: ["16 GB shared RAM", "CPU + GPU", "256 GB SSD"],
+  },
+  {
+    id: "brain_super",
+    station: "brain",
+    icon: Sparkles,
+    specs: ["64 GB shared RAM", "Enhanced CPU + GPU", "512 GB SSD"],
+  },
+  {
+    id: "brain_ultra",
+    station: "brain",
+    icon: Zap,
+    specs: ["128 GB shared RAM", "Top-tier CPU + GPU", "1 TB SSD"],
+  },
 ];
 
-export const powerOptions: ComponentOption[] = [
-  { id: "battery_standard", station: "power", icon: BatteryCharging },
-  { id: "battery_extended", station: "power", icon: Zap },
+export const energyOptions: OptionSpec[] = [
+  {
+    id: "battery_small",
+    station: "energy",
+    icon: BatteryCharging,
+    specs: ["20 V", "2 Ah", "40 Wh"],
+  },
+  {
+    id: "battery_big",
+    station: "energy",
+    icon: Zap,
+    specs: ["20 V", "4 Ah", "80 Wh"],
+  },
 ];
 
-export const perceptionOptions: ComponentOption[] = [
-  { id: "rgb_camera",    station: "perception", icon: Camera },
-  { id: "stereo_camera", station: "perception", icon: Satellite },
-  { id: "ultrasound",    station: "perception", icon: Waves },
-  { id: "infrared",      station: "perception", icon: Gauge },
-  { id: "lidar",         station: "perception", icon: Radar },
+export const movementOptions: OptionSpec[] = [
+  {
+    id: "wheels_4wd",
+    station: "movement",
+    icon: RotateCcw,
+    specs: ["1 drive motor", "1 steering servo", "4 wheels"],
+  },
+  {
+    id: "tracks",
+    station: "movement",
+    icon: Cpu,
+    specs: ["2 independent motors", "Tank-style tracks", "High traction"],
+  },
+  {
+    id: "omni_4",
+    station: "movement",
+    icon: Sparkles,
+    specs: ["4 motors", "Omni/mecanum wheels", "360° lateral movement"],
+  },
+  {
+    id: "walker",
+    station: "movement",
+    icon: GitBranch,
+    specs: ["4 motors", "Articulated legs", "All-terrain"],
+  },
+  {
+    id: "robotic_arm",
+    station: "movement",
+    icon: Cog,
+    specs: ["4 servo motors", "Multi-axis arm", "Gripping & manipulation"],
+  },
 ];
 
-export const motionOptions: ComponentOption[] = [
-  { id: "drive_2wd",   station: "motion", icon: RotateCcw },
-  { id: "drive_4wd",   station: "motion", icon: RotateCcw },
-  { id: "tank_tracks", station: "motion", icon: Cpu },
-  { id: "omni_wheels", station: "motion", icon: Sparkles },
+export const sensorOptions: OptionSpec[] = [
+  { id: "rgb_camera", station: "sensors", icon: Camera },
+  { id: "stereo_camera", station: "sensors", icon: Satellite },
+  { id: "depth_camera", station: "sensors", icon: Navigation },
+  { id: "ultrasound", station: "sensors", icon: Waves },
+  { id: "infrared", station: "sensors", icon: Gauge },
+  { id: "lidar", station: "sensors", icon: Radar },
+  { id: "microphone", station: "sensors", icon: Mic },
+  { id: "imu", station: "sensors", icon: Globe },
+  { id: "temperature", station: "sensors", icon: Thermometer },
+  { id: "gps", station: "sensors", icon: Navigation },
 ];
 
-export const aiOptions: ComponentOption[] = [
-  { id: "aiva_coach",  station: "ai", icon: Brain },
-  { id: "local_voice", station: "ai", icon: Waves },
+export const languageOptions: LanguageOption[] = [
+  {
+    id: "python",
+    icon: Terminal,
+    useCases: [
+      "Scripting & automation",
+      "Sensor data processing",
+      "Machine learning with TensorFlow/PyTorch",
+    ],
+  },
+  {
+    id: "web",
+    icon: Globe,
+    useCases: [
+      "Robot dashboard UI",
+      "REST APIs",
+      "Real-time data visualization",
+    ],
+  },
+  {
+    id: "cpp",
+    icon: Code2,
+    useCases: [
+      "Real-time computer vision with OpenCV+CUDA",
+      "Low-latency motor control",
+      "High-performance algorithms",
+    ],
+  },
+  {
+    id: "rust",
+    icon: Cog,
+    useCases: [
+      "Safe real-time autonomous control",
+      "Embedded systems",
+      "Memory-safe robotics firmware",
+    ],
+  },
 ];
 
-export const robotStorageKey = "r0607.robot-config.v1";
-
-export const ageGroups = ["12-13", "14-15", "16-17", "18-19", "20+"] as const;
-
-/** Counts the total number of selected components (max 5). */
-export function selectedCount(config: RobotConfig): number {
-  return [
-    config.brain,
-    config.power,
-    config.motion,
-    config.ai,
-    ...config.perception,
-  ].filter(Boolean).length;
-}
-
-/** Computes display stats (0–100) for the current robot configuration. */
-export function computeRobotStats(config: RobotConfig): RobotStats {
-  let energy = 0;
-  let weight = 8; // base chassis
-  let speed = 0;
-  let intelligence = 0;
-  let flexibility = 0;
-
-  // Brain
-  if (config.brain === "brain_standard") { intelligence += 30; weight += 10; }
-  else if (config.brain === "brain_plus")  { intelligence += 62; weight += 15; }
-  else if (config.brain === "brain_ultra") { intelligence += 90; weight += 22; }
-
-  // Power
-  if (config.power === "battery_standard") { energy += 45; weight += 12; }
-  else if (config.power === "battery_extended") { energy += 82; weight += 22; }
-
-  // Perception (single sensor)
-  const sensor = config.perception[0] ?? null;
-  if (sensor === "rgb_camera")    { flexibility += 20; weight += 5;  intelligence += 5;  }
-  else if (sensor === "stereo_camera") { flexibility += 30; weight += 10; intelligence += 10; }
-  else if (sensor === "ultrasound")    { flexibility += 15; weight += 3; }
-  else if (sensor === "infrared")      { flexibility += 10; weight += 2; }
-  else if (sensor === "lidar")         { flexibility += 42; weight += 14; intelligence += 15; }
-
-  // Motion
-  if (config.motion === "drive_2wd")   { speed += 62; flexibility += 28; weight += 14; }
-  else if (config.motion === "drive_4wd")   { speed += 50; flexibility += 38; weight += 24; }
-  else if (config.motion === "tank_tracks") { speed += 30; flexibility += 18; weight += 38; }
-  else if (config.motion === "omni_wheels") { speed += 58; flexibility += 68; weight += 20; }
-
-  // AI
-  if (config.ai === "aiva_coach")  { intelligence += 25; weight += 5; }
-  else if (config.ai === "local_voice") { intelligence += 14; weight += 3; }
-
-  return {
-    energy:       Math.min(100, energy),
-    weight:       Math.min(100, weight),
-    speed:        Math.min(100, speed),
-    intelligence: Math.min(100, intelligence),
-    flexibility:  Math.min(100, flexibility),
-  };
-}
+export const defaultSelections = {
+  brain: "brain_basic",
+  energy: "battery_small",
+  movement: "wheels_4wd",
+  sensors: [] as string[],
+} as const;

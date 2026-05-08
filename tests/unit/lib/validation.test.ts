@@ -2,8 +2,6 @@ import { describe, expect, it } from "vitest";
 
 import { schoolContactSchema, workshopSignupSchema } from "@/lib/validation";
 
-// ─── workshopSignupSchema ────────────────────────────────────────────────────
-
 describe("workshopSignupSchema", () => {
   const validInput = {
     email: "tester@example.com",
@@ -60,7 +58,6 @@ describe("workshopSignupSchema", () => {
   });
 
   it("rejects consent = false", () => {
-    // @ts-expect-error — testing invalid runtime value
     expect(workshopSignupSchema.safeParse({ ...validInput, consentContact: false }).success).toBe(
       false,
     );
@@ -82,8 +79,6 @@ describe("workshopSignupSchema", () => {
     expect(result.success).toBe(true);
   });
 });
-
-// ─── schoolContactSchema ─────────────────────────────────────────────────────
 
 describe("schoolContactSchema", () => {
   const validInput = {

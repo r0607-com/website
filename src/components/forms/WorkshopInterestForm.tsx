@@ -5,7 +5,7 @@ import { useFormStatus } from "react-dom";
 import { useTranslations } from "next-intl";
 
 import { registerWorkshopInterest } from "@/app/[locale]/events/actions";
-import { ageGroups } from "@/lib/robot-config";
+import { ageGroups } from "@/lib/validation";
 
 const initialState = { status: "idle" as const, message: "" };
 
