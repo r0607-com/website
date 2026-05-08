@@ -35,14 +35,21 @@
   },
   "robot": {
     "label": "Aktueller Build",
-    "name": "Dein R0607"
+    "name": "Dein R0607",
+    "stats": {
+      "energy": "Energie",
+      "weight": "Gewicht",
+      "speed": "Geschwindigkeit",
+      "intelligence": "Intelligenz",
+      "flexibility": "Flexibilität"
+    }
   },
   "sections": {
     "brain": {
       "kicker": "Brain Brick",
       "title": "Der Brain Brick",
-      "tagline": "Hier beginnt alles.",
-      "copy": "Das Kernmodul ist die Recheneinheit des Roboters in einem technic-brick-kompatiblen Gehäuse. Hier verbinden sich Sensoren, Code und Lernen."
+      "tagline": "Wähle deine Rechenleistung.",
+      "copy": "Wähle die Stufe, die zu deinem Build passt. Der Brain Brick ist das Rechenzentrum des Roboters – hier verbinden sich Sensoren, Code und Lernen. Mehr Rechenleistung bedeutet smartere KI und schnellere Reaktionen."
     },
     "power": {
       "kicker": "Power Up",
@@ -54,7 +61,7 @@
       "kicker": "Wahrnehmung",
       "title": "Wahrnehmung",
       "tagline": "Gib ihm Augen und Ohren.",
-      "copy": "Wähle bis zu drei Sensoren. Kameras, Abstandssensoren, Infrarot und LiDAR eröffnen unterschiedliche Projekte."
+      "copy": "Wähle einen Sensor für deinen Build. Kameras, Abstandssensoren, Infrarot und LiDAR eröffnen unterschiedliche Projekte und Experimente."
     },
     "motion": {
       "kicker": "Bewegung",
@@ -77,6 +84,9 @@
   },
   "components": {
     "brain_brick": { "name": "Brain Brick", "desc": "Die immer enthaltene Recheneinheit für Code, Sensoren und lokale KI-Experimente." },
+    "brain_standard": { "name": "Brain Brick Standard", "desc": "Die Einstiegs-Recheneinheit. Ideal für Programmiergrundlagen, Sensorprojekte und erste Herausforderungen." },
+    "brain_plus": { "name": "Brain Brick Plus", "desc": "Mehr Rechenleistung für Echtzeit-Sensorfusion, schnellere Aiva-Antworten und fortgeschrittene KI-Experimente." },
+    "brain_ultra": { "name": "Brain Brick Ultra", "desc": "Maximale On-Device-Rechenleistung für fortgeschrittene lokale KI, Computer Vision und autonome Roboterprojekte." },
     "battery_standard": { "name": "Standard Battery", "desc": "Eine einfache Energieoption für fokussierte Indoor-Workshop-Builds." },
     "battery_extended": { "name": "Extended Battery", "desc": "Mehr Laufzeit für größere Experimente und längere Lerneinheiten." },
     "battery_outdoor": { "name": "Outdoor Charging", "desc": "Ein robuster Energieansatz für Outdoor-Projekte und Feldtests." },

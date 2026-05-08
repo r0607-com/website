@@ -8,6 +8,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import {
   aiOptions,
+  brainOptions,
   defaultRobotConfig,
   motionOptions,
   perceptionOptions,
@@ -103,14 +104,13 @@ function FloatingShapes() {
 // ─── Station config ───────────────────────────────────────────────────────────
 
 type Station =
-  | { id: "brain"; kind: "static"; options?: never }
-  | { id: "power" | "motion" | "ai"; kind: "single"; options: ComponentOption[] }
-  | { id: "perception"; kind: "multi"; options: ComponentOption[] };
+  | { id: "brain" | "power" | "motion" | "ai"; kind: "single"; options: ComponentOption[] }
+  | { id: "perception"; kind: "single"; options: ComponentOption[] };
 
 const stations: Station[] = [
-  { id: "brain", kind: "static" },
+  { id: "brain", kind: "single", options: brainOptions },
   { id: "power", kind: "single", options: powerOptions },
-  { id: "perception", kind: "multi", options: perceptionOptions },
+  { id: "perception", kind: "single", options: perceptionOptions },
   { id: "motion", kind: "single", options: motionOptions },
   { id: "ai", kind: "single", options: aiOptions },
 ];
@@ -130,8 +130,9 @@ export function RobotBuilder() {
       const parsed = JSON.parse(raw) as RobotConfig;
       window.requestAnimationFrame(() => {
         setConfig({
+          brain: parsed.brain ?? "brain_standard",
           power: parsed.power ?? null,
-          perception: Array.isArray(parsed.perception) ? parsed.perception : [],
+          perception: Array.isArray(parsed.perception) ? parsed.perception.slice(0, 1) : [],
           motion: parsed.motion ?? null,
           ai: parsed.ai ?? null,
         });
@@ -144,7 +145,7 @@ export function RobotBuilder() {
 
   const specItems = useMemo(() => {
     const ids = [
-      "brain_brick",
+      config.brain ?? "brain_standard",
       config.power,
       ...config.perception,
       config.motion,
@@ -156,14 +157,13 @@ export function RobotBuilder() {
   function selectOption(option: ComponentOption) {
     setSaved(false);
     setConfig((current) => {
-      if (option.station === "power") return { ...current, power: option.id };
+      if (option.station === "brain")  return { ...current, brain: option.id };
+      if (option.station === "power")  return { ...current, power: option.id };
       if (option.station === "motion") return { ...current, motion: option.id };
-      if (option.station === "ai") return { ...current, ai: option.id };
-      const exists = current.perception.includes(option.id);
-      const next = exists
-        ? current.perception.filter((item) => item !== option.id)
-        : [...current.perception, option.id].slice(0, 3);
-      return { ...current, perception: next };
+      if (option.station === "ai")     return { ...current, ai: option.id };
+      // Perception — single select (replace or deselect)
+      const isSame = current.perception[0] === option.id;
+      return { ...current, perception: isSame ? [] : [option.id] };
     });
   }
 
@@ -180,13 +180,13 @@ export function RobotBuilder() {
 
   return (
     <main className="tron-grid crosshair-cursor pt-16">
-      <section className="relative mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:px-8">
+      <section className="relative mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-7xl items-center px-4 py-16 sm:px-6 lg:px-8">
         <FloatingShapes />
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
-          className="relative max-w-3xl"
+          className="relative w-full"
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-cyan-soft/50 bg-surface/80 px-3 py-2 font-mono text-xs uppercase text-cyan-soft">
             <span className="size-2 rounded-full bg-green-soft" />
@@ -230,10 +230,6 @@ export function RobotBuilder() {
             ))}
           </div>
         </motion.div>
-        {/* Mobile/tablet only — desktop uses the sticky sidebar aside below */}
-        <div className="lg:hidden">
-          <RobotPanel config={config} selected={selectedCount(config)} />
-        </div>
       </section>
 
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-20 sm:px-6 lg:grid-cols-[1fr_420px] lg:px-8">

@@ -35,14 +35,21 @@
   },
   "robot": {
     "label": "Current build",
-    "name": "Your R0607"
+    "name": "Your R0607",
+    "stats": {
+      "energy": "Energy",
+      "weight": "Weight",
+      "speed": "Speed",
+      "intelligence": "Intelligence",
+      "flexibility": "Flexibility"
+    }
   },
   "sections": {
     "brain": {
       "kicker": "Brain Brick",
       "title": "The Brain Brick",
-      "tagline": "Everything starts here.",
-      "copy": "The core module is the robot's computing center inside a technic-brick compatible case. Think of it as the skull: the place where sensing, code, and learning connect."
+      "tagline": "Choose your computing power.",
+      "copy": "Pick the tier that fits your build. The Brain Brick is the robot's computing center — the place where sensing, code, and learning connect. More compute means smarter AI and faster responses."
     },
     "power": {
       "kicker": "Power Up",
@@ -54,7 +61,7 @@
       "kicker": "Perception",
       "title": "Perception",
       "tagline": "Give it eyes and ears.",
-      "copy": "Select up to three sensors. Cameras, distance sensing, infrared, and LiDAR open different projects and experiments."
+      "copy": "Select one sensor for your build. Cameras, distance sensing, infrared, and LiDAR unlock different projects and experiments."
     },
     "motion": {
       "kicker": "Motion",
@@ -79,6 +86,18 @@
     "brain_brick": {
       "name": "Brain Brick",
       "desc": "The always-included computing core for code, sensors, and local AI experiments."
+    },
+    "brain_standard": {
+      "name": "Brain Brick Standard",
+      "desc": "The entry-level computing core. Great for learning basics, sensor projects, and early programming challenges."
+    },
+    "brain_plus": {
+      "name": "Brain Brick Plus",
+      "desc": "More compute for real-time sensor fusion, faster Aiva responses, and intermediate AI experiments."
+    },
+    "brain_ultra": {
+      "name": "Brain Brick Ultra",
+      "desc": "Maximum on-device compute for advanced local AI, computer vision, and autonomous robot projects."
     },
     "battery_standard": {
       "name": "Standard Battery",

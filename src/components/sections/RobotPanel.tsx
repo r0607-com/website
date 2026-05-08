@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { Component, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
-import type { RobotConfig } from "@/lib/robot-config";
+import { computeRobotStats, type RobotConfig } from "@/lib/robot-config";
 
 const RobotCanvas = dynamic(
   () => import("@/components/robot3d/RobotCanvas").then((mod) => mod.RobotCanvas),
@@ -52,15 +52,15 @@ function RobotSvgFallback({ config }: { config: RobotConfig }) {
       >
         {/* Chassis */}
         <rect x="50" y="50" width="80" height="50" rx="4" fill="none" stroke="#7ee8fa" strokeWidth="1.5" />
-        {/* Power pack */}
+        {/* Power pack — back */}
         {config.power && (
-          <rect x="130" y="56" width="18" height="38" rx="2" fill="none" stroke="#fcd34d" strokeWidth="1.5" />
+          <rect x="50" y="96" width="80" height="12" rx="2" fill="none" stroke="#fcd34d" strokeWidth="1.5" />
         )}
         {/* Wheels */}
         {(config.motion === "drive_2wd" || config.motion === "drive_4wd" || config.motion === "omni_wheels") && (
           <>
-            <ellipse cx="58" cy="108" rx="10" ry="10" fill="none" stroke="#86efac" strokeWidth="1.5" />
-            <ellipse cx="122" cy="108" rx="10" ry="10" fill="none" stroke="#86efac" strokeWidth="1.5" />
+            <ellipse cx="58" cy="116" rx="10" ry="10" fill="none" stroke="#86efac" strokeWidth="1.5" />
+            <ellipse cx="122" cy="116" rx="10" ry="10" fill="none" stroke="#86efac" strokeWidth="1.5" />
           </>
         )}
         {config.motion === "tank_tracks" && (
@@ -90,6 +90,33 @@ function RobotSvgFallback({ config }: { config: RobotConfig }) {
   );
 }
 
+interface StatBarProps {
+  label: string;
+  value: number;
+  colorClass: string;
+}
+
+function StatBar({ label, value, colorClass }: StatBarProps) {
+  return (
+    <div>
+      <div className="mb-1 flex items-center justify-between">
+        <span className="font-mono text-xs uppercase text-muted">{label}</span>
+        <span className="font-mono text-xs text-foreground">{value}</span>
+      </div>
+      <div className="h-1.5 overflow-hidden rounded-full bg-border">
+        <div
+          className={`h-full rounded-full transition-all duration-500 ${colorClass}`}
+          style={{ width: `${value}%` }}
+          role="progressbar"
+          aria-valuenow={value}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        />
+      </div>
+    </div>
+  );
+}
+
 interface RobotPanelProps {
   config: RobotConfig;
   selected: number;
@@ -97,6 +124,7 @@ interface RobotPanelProps {
 
 export function RobotPanel({ config, selected }: RobotPanelProps) {
   const t = useTranslations("robot");
+  const stats = computeRobotStats(config);
 
   return (
     <aside className="lg:first:block">
@@ -110,8 +138,15 @@ export function RobotPanel({ config, selected }: RobotPanelProps) {
             <p className="font-display text-xl font-bold">{t("name")}</p>
           </div>
           <div className="rounded-md border border-green-soft/50 px-3 py-2 font-mono text-sm text-green-soft">
-            {selected}/7
+            {selected}/5
           </div>
+        </div>
+        <div className="mt-4 space-y-2.5 border-t border-border pt-4">
+          <StatBar label={t("stats.energy")}       value={stats.energy}       colorClass="bg-amber-400" />
+          <StatBar label={t("stats.weight")}       value={stats.weight}       colorClass="bg-slate-400" />
+          <StatBar label={t("stats.speed")}        value={stats.speed}        colorClass="bg-green-400" />
+          <StatBar label={t("stats.intelligence")} value={stats.intelligence} colorClass="bg-cyan-400"  />
+          <StatBar label={t("stats.flexibility")}  value={stats.flexibility}  colorClass="bg-violet-400" />
         </div>
       </div>
     </aside>

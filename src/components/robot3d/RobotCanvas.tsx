@@ -100,7 +100,7 @@ function RobotModel({
   });
 
   return (
-    <group ref={groupRef} scale={1.35}>
+    <group ref={groupRef} scale={1.65}>
       {/* Chassis — always present */}
       <mesh position={[0, 0.18, 0]}>
         <boxGeometry args={[1.35, 0.72, 0.92]} />
@@ -113,10 +113,11 @@ function RobotModel({
         />
       </mesh>
 
+      {/* Battery pack — centred on the back face of the chassis (positive Z) */}
       {config.power ? (
-        <AnimatedEntry x={0.86} y={0.12} z={0}>
+        <AnimatedEntry x={0} y={0.14} z={0.60}>
           <mesh>
-            <boxGeometry args={[0.28, 0.72, 0.58]} />
+            <boxGeometry args={[0.64, 0.62, 0.26]} />
             <meshStandardMaterial
               color="#24324d"
               emissive="#fcd34d"
