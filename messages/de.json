@@ -2,7 +2,7 @@
   "nav": {
     "logo": "R0607",
     "home": "Start",
-    "events": "Workshops",
+    "workshops": "Workshops",
     "learn": "Lernen",
     "education": "Bildung",
     "theme": "Theme wechseln",
@@ -10,8 +10,13 @@
     "closeMenu": "Menü schließen"
   },
   "footer": {
-    "description": "Ein praxisnahes Robotik-Lernerlebnis für Kinder, Jugendliche, Erwachsene, Eltern und Schulen.",
-    "events": "Workshops",
+    "home": "Start",
+    "slogan": "Imagine · Learn · Create",
+    "socialMedia": "Social Media",
+    "legalNotice": "Legal Notice",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "workshops": "Workshops",
     "learn": "Lernen",
     "education": "Bildung",
     "privacy": "Datenschutz",
@@ -23,13 +28,13 @@
     "badge": "Berlin-Workshops bald verfügbar",
     "heading": "Imagine · Learn · Create",
     "subheading": "",
-    "copy": "Baue deinen persönlichen Roboter zusammen, wähle Sensoren und Bewegungssysteme und lerne dann mit Aiva — einem lokalen KI-Coach, der direkt auf dem Roboter läuft.",
+    "copy": "Baue einen persönlichen Roboter zusammen, wähle Sensoren und Bewegungssysteme und lerne dann mit Aiva — einem lokalen KI-Coach, der direkt auf dem Roboter läuft.",
     "start": "Roboter erkunden",
-    "workshops": "Workshop-Interesse",
+    "workshops": "Workshops",
     "stats": {
       "brain": "On-device KI",
       "code": "Python · C++ · Rust · Web",
-      "aiva": "Aiva Lerncoach",
+      "aiva": "Persönlicher Lerncoach",
       "privacy": "Keine Cloud-KI-Uploads"
     }
   },
@@ -42,22 +47,22 @@
     "energy": {
       "kicker": "02 / Energie",
       "title": "Energie",
-      "copy": "Wähle den Akku, der deinen Roboter antreibt. Beide laufen mit 20 V. Der größere Akku verdoppelt die Laufzeit und ermöglicht schwerere Aktoren."
+      "copy": "Wähle den Akku, der einen Roboter antreibt. Beide laufen mit 20 V. Der größere Akku verdoppelt die Laufzeit und ermöglicht schwerere Aktoren."
     },
     "movement": {
       "kicker": "03 / Bewegung",
       "title": "Bewegung",
-      "copy": "Wähle, wie sich dein Roboter bewegt. Vom einfachen 4-Rad-Antrieb über omnidirektionale Räder und Ketten bis zu Laufbeinen oder einem Roboterarm — jede Variante eröffnet andere Projekte und Herausforderungen."
+      "copy": "Wähle, wie sich ein Roboter bewegt. Vom einfachen 4-Rad-Antrieb über omnidirektionale Räder und Ketten bis zu Laufbeinen oder einem Roboterarm — jede Variante eröffnet andere Projekte und Herausforderungen."
     },
     "sensors": {
       "kicker": "04 / Sensoren",
       "title": "Sensoren",
-      "copy": "Gib deinem Roboter Wahrnehmung. Wähle einen Sensor, um zu erkunden, wie er funktioniert — R0607 unterstützt alle gleichzeitig und ist mit jedem Linux-kompatiblen Sensor erweiterbar."
+      "copy": "Gib einem Roboter Wahrnehmung. Wähle einen Sensor, um zu erkunden, wie er funktioniert — R0607 unterstützt alle gleichzeitig und ist mit jedem Linux-kompatiblen Sensor erweiterbar."
     },
     "languages": {
       "kicker": "05 / Programmierung",
       "title": "Programmiersprachen",
-      "copy": "R0607 unterstützt mehrere Sprachen für unterschiedliche Anwendungsfälle. Starte mit Python für die Grundlagen, nutze Web für Dashboards, greife zu C++ wenn du Geschwindigkeit brauchst, und zu Rust für sichere autonome Echtzeitsysteme."
+      "copy": "R0607 unterstützt mehrere Sprachen für unterschiedliche Anwendungsfälle. Der Einstieg gelingt mit Python für die Grundlagen, Web eignet sich für Dashboards, C++ für Geschwindigkeit und Rust für sichere autonome Echtzeitsysteme."
     }
   },
   "components": {
@@ -262,12 +267,11 @@
       "zoomOut": "Herauszoomen"
     }
   },
-  "events": {
+  "workshops": {
     "kicker": "Berlin-Workshops",
     "title": "Hands-on Roboterbau für neugierige Lernende.",
-    "copy": "R0607-Workshops kommen bald nach Berlin. Registriere dein Interesse, und wir nutzen die Altersgruppen, um passende Kohorten zu planen, bevor Termine angekündigt werden.",
-    "formTitle": "Interesse registrieren",
-    "card": {
+    "copy": "R0607-Workshops kommen bald nach Berlin. Termine, Altersorientierung und das erste Kursformat werden hier veröffentlicht, sobald sie bereit sind.",
+    "featured": {
       "title": "Basic Programming mit R0607",
       "status": "Coming soon",
       "format": {
@@ -283,38 +287,26 @@
         "value": "Berlin · TBD"
       }
     },
-    "faq": {
+    "comingSoon": {
+      "title": "Registrierung kommt bald",
+      "copy": "Die Workshop-Registrierung ist noch nicht geöffnet. Diese Launch-Version hält die Website einfach, während das erste Berliner Format finalisiert wird."
+    },
+    "details": {
       "learn": {
-        "q": "Was werden Lernende bauen?",
-        "a": "Sie bauen und programmieren einen Roboter, arbeiten mit Sensoren und Bewegung und lernen, wie lokale KI Robotikprojekte unterstützen kann."
+        "title": "Was Lernende bauen",
+        "copy": "Lernende bauen und programmieren einen Roboter, arbeiten mit Sensoren und Bewegung und lernen, wie lokale KI Robotikprojekte unterstützen kann."
       },
       "bring": {
-        "q": "Was müssen Lernende mitbringen?",
-        "a": "Details werden vor der ersten Kohorte geteilt. Ziel ist, das Setup praktisch und geführt zu halten."
+        "title": "Was mitzubringen ist",
+        "copy": "Details werden vor der ersten Kohorte geteilt. Ziel ist, das Setup praktisch und geführt zu halten."
       },
       "cost": {
-        "q": "Was kostet es?",
-        "a": "Die Preise stehen noch nicht fest, während das Workshop-Format validiert wird."
+        "title": "Preis",
+        "copy": "Die Preise stehen noch nicht fest, während das Workshop-Format validiert wird."
       },
-      "list": {
-        "q": "Ist das eine Warteliste?",
-        "a": "Es ist eine Interessentenliste. Wir kontaktieren dich, wenn Berliner Kohorten startklar sind."
-      }
-    },
-    "form": {
-      "email": "E-Mail",
-      "ageGroup": "Altersgruppe",
-      "choose": "Wähle eine Altersgruppe",
-      "consent": "Ich stimme zu, zu R0607-Workshops kontaktiert zu werden.",
-      "submit": "Interesse registrieren",
-      "submitting": "Wird gesendet...",
-      "messages": {
-        "invalid": "Bitte prüfe das Formular und versuche es erneut.",
-        "queued": "Danke. Dein Interesse wurde für diesen Build lokal erfasst; verbinde Supabase, um Einsendungen zu speichern.",
-        "registered": "Danke. Du stehst auf der Interessentenliste.",
-        "duplicate": "Diese E-Mail ist bereits registriert.",
-        "rate_limited": "Zu viele Einsendungen. Bitte versuche es später erneut.",
-        "unknown": "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
+      "registration": {
+        "title": "Registrierung",
+        "copy": "Die Registrierung wird ergänzt, sobald der erste Workshop-Zeitplan und die Kohortendetails bestätigt sind."
       }
     }
   },
@@ -322,8 +314,6 @@
     "kicker": "Schulen und Institutionen",
     "title": "Robotik- und KI-Lernen, entwickelt für das Klassenzimmer.",
     "copy": "R0607 startet mit Berliner Workshop-Kohorten und wächst später in Richtung möglicher Schul-Piloten, sobald Lernmaterial und Hardware stabil genug sind.",
-    "formTitle": "Kontakt für Schul-Pilot",
-    "emailFallback": "Lieber per E-Mail? Kontakt: hello@r0607.com.",
     "outcomes": {
       "programming": {
         "title": "Programmiergrundlagen",
@@ -354,31 +344,23 @@
       "title": "Pilotformat",
       "copy": "Kleine Berliner Workshops kommen zuerst. Schul-Piloten können folgen, sobald das Format ausgereift ist — mit klaren Altersgruppen, Unterstützung für Lehrkräfte sowie praktischen Erwartungen an Raum und Ausstattung."
     },
-    "form": {
-      "name": "Name",
-      "email": "E-Mail",
-      "submit": "Kontaktanfrage senden",
-      "submitting": "Wird gesendet...",
-      "messages": {
-        "invalid": "Bitte gib einen gültigen Namen und eine gültige E-Mail an.",
-        "sent": "Danke. Wir melden uns.",
-        "rate_limited": "Zu viele Einsendungen. Bitte versuche es später erneut.",
-        "unknown": "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
-      }
+    "comingSoon": {
+      "title": "Schulkontakt kommt bald",
+      "copy": "Das Kontaktformular für Schulen ist für den ersten öffentlichen Launch pausiert. Informationen zu Piloten werden ergänzt, sobald das Workshop-Format bereit ist."
     }
   },
   "learn": {
     "kicker": "Aiva, lokale KI, Learning Hub",
-    "title": "Dein persönlicher Roboter-Lerncoach.",
+    "title": "Ein persönlicher Lerncoach.",
     "copy": "R0607 verbindet einen physischen Roboter, lokale KI, Sprache und Kurse in einem Learning Hub direkt auf dem Roboter.",
     "sections": {
       "personal": {
-        "title": "Dein persönlicher Roboter",
+        "title": "Ein persönlicher Roboter",
         "copy": "Der Roboter ist als eigener Build der Lernenden gedacht. Entscheidungen, Projekte und die Interaktion mit Aiva sollen persönlich statt generisch wirken."
       },
       "aiva": {
         "title": "Aiva",
-        "copy": "Aiva ist die Persönlichkeit und der Lerncoach des Roboters. Sie hilft dabei, Lektionen zu erklären, Code zu debuggen und passende nächste Schritte vorzuschlagen."
+        "copy": "Aiva ist ein persönlicher Lerncoach und die Persönlichkeit des Roboters. Sie hilft dabei, Lektionen zu erklären, Code zu debuggen und passende nächste Schritte vorzuschlagen."
       },
       "privacy": {
         "title": "Local-first Datenschutz",
@@ -400,47 +382,103 @@
   },
   "privacy": {
     "title": "Datenschutz",
+    "lastUpdated": "Stand: 20. Mai 2026",
     "intro": {
       "title": "Überblick",
-      "copy": "R0607 erfasst in der Launch-Phase so wenige Website-Daten wie möglich."
+      "copy": "Diese Datenschutzerklärung erklärt, wie die R0607-Website in der Launch-Phase mit personenbezogenen Daten umgeht. Die Website ist aktuell eine reine Informationswebsite ohne Analytics, Werbe-Tracking, Kontaktformulare, Registrierungen, Nutzerkonten, Zahlungen oder Newsletter-Anmeldung."
     },
-    "signup": {
-      "title": "Workshop-Interesse",
-      "copy": "Das Workshop-Formular erfasst E-Mail, Altersgruppe, Sprache, Einwilligung und Zeitstempel, damit wir interessierte Personen zu Berliner Workshops kontaktieren können."
+    "controller": {
+      "title": "Verantwortlicher",
+      "copy": "Verantwortlicher im Sinne der DSGVO: [Vollständiger rechtlicher Name], [Straße und Hausnummer], [Postleitzahl und Ort], Deutschland. E-Mail: r0607.com."
+    },
+    "hosting": {
+      "title": "Hosting und Server-Logfiles",
+      "copy": "Beim Aufruf der Website kann der Hosting-Anbieter technische Zugriffsdaten verarbeiten, zum Beispiel IP-Adresse, Datum und Uhrzeit, aufgerufene URL, Referrer, User-Agent, HTTP-Statuscode und übertragene Datenmenge. Dies ist notwendig, um die Website auszuliefern, die Sicherheit zu gewährleisten, Fehler zu analysieren und Missbrauch zu verhindern."
+    },
+    "storage": {
+      "title": "Cookies und Local Storage",
+      "copy": "Die Launch-Website verwendet keine Analytics-Cookies, Werbe-Cookies oder Tracking-Pixel von Dritten. Gespeichert wird nur die gewählte Theme-Einstellung im Local Storage des Browsers unter dem Schlüssel \"theme\", damit der gewünschte helle oder dunkle Modus wiederhergestellt werden kann. Local Storage kann in den Browser-Einstellungen gelöscht werden. Wenn später nicht notwendige Cookies oder Analytics ergänzt werden, wird diese Erklärung aktualisiert und eine Einwilligung eingeholt, soweit sie erforderlich ist."
+    },
+    "contact": {
+      "title": "Kontakt per E-Mail",
+      "copy": "Wenn Kontakt per E-Mail aufgenommen wird, werden die übermittelte E-Mail-Adresse, der Nachrichteninhalt und dazugehörige Metadaten verarbeitet, um die Anfrage zu bearbeiten. Die Website selbst enthält derzeit keine Kontakt-, Registrierungs- oder Workshop-Anmeldeformulare."
     },
     "localAi": {
       "title": "Lokale KI",
       "copy": "Aiva, das LLM, Sprachfunktionen und der Learning Hub laufen direkt auf dem Roboter. KI-Chat- und Sprachlerndaten werden nicht an Cloud-KI-Anbieter gesendet."
     },
-    "rights": {
-      "title": "Löschung",
-      "copy": "Du kannst die Löschung von Workshop-Interessensdaten anfordern, indem du hello@r0607.com kontaktierst oder den Abmeldelink in deiner Bestätigungs-E-Mail nutzt."
+    "legalBasis": {
+      "title": "Rechtsgrundlagen",
+      "copy": "Die Verarbeitung technischer Hosting- und Sicherheitsdaten erfolgt auf Grundlage berechtigter Interessen an einer sicheren und zuverlässigen Website gemäß Art. 6 Abs. 1 lit. f DSGVO. E-Mail-Kommunikation wird zur Beantwortung der Anfrage verarbeitet, je nach Inhalt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglicher Kommunikation oder Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen. Die Theme-Speicherung dient der Bereitstellung einer vom Nutzer gewünschten Website-Einstellung."
     },
-    "hosting": {
-      "title": "Hosting",
-      "copy": "Die Website ist für Hosting auf Vercel und Supabase in der EU-Region zur Speicherung von Workshop-Interessen vorgesehen."
+    "recipients": {
+      "title": "Empfänger und Übermittlungen",
+      "copy": "Personenbezogene Daten werden nicht verkauft. Technische Daten können durch den Hosting-Anbieter und weitere Dienstleister verarbeitet werden, die für den Betrieb der Website eingesetzt werden. Wenn ein Anbieter Daten außerhalb der EU oder des EWR verarbeitet, sollten geeignete Garantien wie Angemessenheitsbeschlüsse oder Standardvertragsklauseln eingesetzt werden."
+    },
+    "retention": {
+      "title": "Speicherdauer",
+      "copy": "Server-Logfiles werden nur so lange gespeichert, wie es für Betrieb, Sicherheit und Fehleranalyse nach der Konfiguration des Hosting-Anbieters erforderlich ist. E-Mail-Anfragen werden so lange gespeichert, wie es für die Bearbeitung der Anfrage und mögliche Dokumentationspflichten notwendig ist. In dieser Launch-Version gibt es keine Workshop-Anmeldedatenbank."
+    },
+    "rights": {
+      "title": "Betroffenenrechte",
+      "copy": "Soweit die gesetzlichen Voraussetzungen vorliegen, bestehen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Eine Einwilligung, falls sie künftig eingeholt wird, kann jederzeit mit Wirkung für die Zukunft widerrufen werden."
+    },
+    "supervisory": {
+      "title": "Aufsichtsbehörde",
+      "copy": "Betroffene Personen haben das Recht, Beschwerde bei einer zuständigen Datenschutzaufsichtsbehörde einzulegen. In Deutschland ist dies in der Regel die Aufsichtsbehörde des Bundeslandes, in dem der Verantwortliche niedergelassen ist."
+    },
+    "automated": {
+      "title": "Automatisierte Entscheidungen",
+      "copy": "Die Launch-Website verwendet keine automatisierten Entscheidungen oder Profiling im Sinne von Art. 22 DSGVO."
+    },
+    "children": {
+      "title": "Kinder",
+      "copy": "Die Website beschreibt Robotik-Lernprodukte und zukünftige Workshops, erfasst derzeit aber keine Registrierungsdaten von Kindern oder Eltern. Künftige Registrierungsfunktionen benötigen vor Veröffentlichung eine eigene Datenschutzprüfung."
+    },
+    "changes": {
+      "title": "Änderungen",
+      "copy": "Diese Erklärung wird aktualisiert, wenn Formulare, Workshop-Registrierung, Analytics, Zahlungen, Newsletter oder datenbankgestützte Funktionen ergänzt werden."
     }
   },
   "imprint": {
     "title": "Impressum",
-    "operator": {
-      "heading": "Betreiber",
-      "name": "[Name des Betreibers — vor dem Launch ausfüllen]",
-      "street": "[Straße und Hausnummer]",
-      "city": "[Postleitzahl und Ort]",
-      "country": "Deutschland"
-    },
-    "responsible": {
-      "heading": "Verantwortliche Person",
-      "name": "[Vollständiger Name der verantwortlichen Person]"
+    "lastUpdated": "Stand: 20. Mai 2026",
+    "intro": "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG). Die Platzhalter müssen vor Veröffentlichung durch die finalen rechtlichen Angaben ersetzt werden.",
+    "provider": {
+      "title": "Diensteanbieter",
+      "copy": "[Vollständiger rechtlicher Name] · [Straße und Hausnummer] · [Postleitzahl und Ort] · Deutschland"
     },
     "contact": {
-      "heading": "Kontakt",
-      "email": "hello@r0607.com"
+      "title": "Kontakt",
+      "copy": "E-Mail: r0607.com"
     },
-    "note": {
-      "heading": "Hinweis",
-      "copy": "Diese Website ist ein Lernprojekt. Workshop-Inhalte und Produktdetails können sich ändern."
+    "responsible": {
+      "title": "Inhaltlich verantwortlich",
+      "copy": "Verantwortlich für Inhalte gemäß § 18 Abs. 2 Medienstaatsvertrag (MStV), falls anwendbar: [Vollständiger rechtlicher Name], Anschrift wie oben."
+    },
+    "register": {
+      "title": "Handelsregister",
+      "copy": "Nicht eingetragen / [Registergericht und Registernummer, falls zutreffend]."
+    },
+    "vat": {
+      "title": "Umsatzsteuer-ID",
+      "copy": "Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: nicht vergeben / [USt-IdNr., falls vorhanden]."
+    },
+    "supervisory": {
+      "title": "Aufsichtsbehörde",
+      "copy": "Über diese Website wird derzeit keine erlaubnispflichtige Tätigkeit angeboten / [zuständige Aufsichtsbehörde, falls zutreffend]."
+    },
+    "consumerDispute": {
+      "title": "Verbraucherstreitbeilegung",
+      "copy": "Über diese Launch-Website werden keine Online-Verträge geschlossen. Die europäische Online-Streitbeilegungsplattform wurde zum 20. Juli 2025 eingestellt. Soweit künftig keine gesetzliche Pflicht besteht, ist eine Teilnahme an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht vorgesehen."
+    },
+    "liability": {
+      "title": "Inhalte",
+      "copy": "Die Inhalte dieser Website dienen der allgemeinen Information über R0607. Produkt-, Workshop- und Verfügbarkeitsangaben können sich bis zum Launch ändern."
+    },
+    "copyright": {
+      "title": "Urheberrecht",
+      "copy": "Texte, Design, Code, Grafiken und sonstige Materialien dieser Website sind urheberrechtlich geschützt, sofern nicht anders angegeben. Eine Nutzung über das gesetzlich Erlaubte hinaus erfordert eine vorherige Erlaubnis."
     }
   }
 }

@@ -13,19 +13,19 @@ import type { Locale } from "@/i18n/routing";
 
 const navItems = [
   { href: "", key: "home" },
-  { href: "events", key: "events" },
+  { href: "workshops", key: "workshops" },
   { href: "learn", key: "learn" },
   { href: "education", key: "education" },
 ] as const;
 
-function LogoMark({ className = "size-10" }: { className?: string }) {
+function LogoMark({ className = "" }: { className?: string }) {
   return (
     <Image
       src="/icon.svg"
       alt=""
       width={42}
       height={42}
-      className={`brand-mark ${className}`}
+      className={`brand-mark nav-brand-mark ${className}`}
       aria-hidden="true"
     />
   );
@@ -59,10 +59,10 @@ export function Navbar({ locale }: { locale: Locale }) {
         <nav className="site-shell flex min-h-16 items-center justify-between gap-4 lg:min-h-20">
           <Link
             href={`/${locale}`}
-            className="focus-ring group flex min-h-10 items-center gap-3 rounded-md"
+            className="focus-ring nav-brand-lockup group flex min-h-10 items-center rounded-md"
             aria-label={t("home")}
           >
-            <LogoMark className="size-10 lg:size-12" />
+            <LogoMark />
             <span className="brand-wordmark logo-gradient">
               R0607
             </span>
@@ -141,7 +141,7 @@ export function Navbar({ locale }: { locale: Locale }) {
             >
               <div className="mb-8 flex items-center justify-between">
                 <span className="flex items-center gap-3">
-                  <LogoMark className="size-10" />
+                  <LogoMark />
                   <span className="brand-wordmark logo-gradient">
                     R0607
                   </span>

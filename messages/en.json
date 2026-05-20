@@ -2,7 +2,7 @@
   "nav": {
     "logo": "R0607",
     "home": "Home",
-    "events": "Workshops",
+    "workshops": "Workshops",
     "learn": "Learn",
     "education": "Education",
     "theme": "Toggle theme",
@@ -10,8 +10,13 @@
     "closeMenu": "Close menu"
   },
   "footer": {
-    "description": "A hands-on robotics learning experience for kids, teens, adults, parents, and schools.",
-    "events": "Workshops",
+    "home": "Home",
+    "slogan": "Imagine · Learn · Create",
+    "socialMedia": "Social Media",
+    "legalNotice": "Legal Notice",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "workshops": "Workshops",
     "learn": "Learn",
     "education": "Education",
     "privacy": "Privacy",
@@ -23,13 +28,13 @@
     "badge": "Berlin workshops coming soon",
     "heading": "Imagine · Learn · Create",
     "subheading": "",
-    "copy": "Assemble your personal robot, choose sensors and motion systems, then learn with Aiva — a local AI coach running directly on the robot.",
+    "copy": "Assemble a personal robot, choose sensors and motion systems, then learn with Aiva — a local AI coach running directly on the robot.",
     "start": "Explore the robot",
-    "workshops": "Workshop interest",
+    "workshops": "Workshops",
     "stats": {
       "brain": "On-device AI",
       "code": "Python · C++ · Rust · Web",
-      "aiva": "Aiva learning coach",
+      "aiva": "Personal learning coach",
       "privacy": "No cloud AI uploads"
     }
   },
@@ -42,17 +47,17 @@
     "energy": {
       "kicker": "02 / Energy",
       "title": "Energy",
-      "copy": "Choose the battery that powers your robot. Both run at 20 V. The bigger battery doubles run time and enables heavier actuators."
+      "copy": "Choose the battery that powers a robot. Both run at 20 V. The bigger battery doubles run time and enables heavier actuators."
     },
     "movement": {
       "kicker": "03 / Movement",
       "title": "Movement",
-      "copy": "Choose how your robot moves. From simple 4-wheel drive to omni-directional wheels, tank tracks, walking legs, or a robotic arm — each opens different projects and challenges."
+      "copy": "Choose how a robot moves. From simple 4-wheel drive to omni-directional wheels, tank tracks, walking legs, or a robotic arm — each opens different projects and challenges."
     },
     "sensors": {
       "kicker": "04 / Sensors",
       "title": "Sensors",
-      "copy": "Give your robot awareness. Select a sensor to explore how it works — R0607 supports all of them simultaneously and is compatible with any Linux-compatible sensor."
+      "copy": "Give a robot awareness. Select a sensor to explore how it works — R0607 supports all of them simultaneously and is compatible with any Linux-compatible sensor."
     },
     "languages": {
       "kicker": "05 / Programming",
@@ -262,12 +267,11 @@
       "zoomOut": "Zoom out"
     }
   },
-  "events": {
+  "workshops": {
     "kicker": "Berlin workshops",
     "title": "Hands-on robot building for curious learners.",
-    "copy": "R0607 workshops are coming soon in Berlin. Register interest and we will use age groups to plan suitable cohorts before dates are announced.",
-    "formTitle": "Register interest",
-    "card": {
+    "copy": "R0607 workshops are coming soon in Berlin. Dates, age guidance, and the first course format will be published here when they are ready.",
+    "featured": {
       "title": "Basic Programming with R0607",
       "status": "Coming soon",
       "format": {
@@ -283,38 +287,26 @@
         "value": "Berlin · TBD"
       }
     },
-    "faq": {
+    "comingSoon": {
+      "title": "Registration coming soon",
+      "copy": "Workshop registration is not open yet. This launch version keeps the site simple while the first Berlin format is being finalized."
+    },
+    "details": {
       "learn": {
-        "q": "What will learners build?",
-        "a": "They will assemble and program a robot, work with sensors and motion, and learn how local AI can support robotics projects."
+        "title": "What learners build",
+        "copy": "Learners assemble and program a robot, work with sensors and motion, and learn how local AI can support robotics projects."
       },
       "bring": {
-        "q": "What do learners need to bring?",
-        "a": "Details will be shared before the first cohort. The goal is to keep the setup practical and guided."
+        "title": "What to bring",
+        "copy": "Details will be shared before the first cohort. The goal is to keep the setup practical and guided."
       },
       "cost": {
-        "q": "How much does it cost?",
-        "a": "Pricing is still TBD while the workshop format is being validated."
+        "title": "Pricing",
+        "copy": "Pricing is still TBD while the workshop format is being validated."
       },
-      "list": {
-        "q": "Is this a waiting list?",
-        "a": "It is an interest list. We will contact you when Berlin cohorts are ready."
-      }
-    },
-    "form": {
-      "email": "Email",
-      "ageGroup": "Age group",
-      "choose": "Choose an age group",
-      "consent": "I agree to be contacted about R0607 workshops.",
-      "submit": "Register interest",
-      "submitting": "Submitting...",
-      "messages": {
-        "invalid": "Please check the form and try again.",
-        "queued": "Thanks. Your interest was recorded locally for this build; connect Supabase to store submissions.",
-        "registered": "Thanks. You are on the interest list.",
-        "duplicate": "This email is already registered.",
-        "rate_limited": "Too many submissions. Please try again later.",
-        "unknown": "Something went wrong. Please try again later."
+      "registration": {
+        "title": "Registration",
+        "copy": "Registration will be added after the first workshop schedule and cohort details are confirmed."
       }
     }
   },
@@ -322,8 +314,6 @@
     "kicker": "Schools and institutions",
     "title": "Robotics and AI learning, built for the classroom.",
     "copy": "R0607 starts with Berlin workshop cohorts and grows toward future school pilots once the learning material and hardware are stable enough.",
-    "formTitle": "School pilot contact",
-    "emailFallback": "Prefer email? Contact hello@r0607.com.",
     "outcomes": {
       "programming": {
         "title": "Programming fundamentals",
@@ -354,31 +344,23 @@
       "title": "Pilot format",
       "copy": "Small Berlin workshops come first. School pilots can follow after the format is mature, with clear age bands, instructor support, and practical room and equipment expectations."
     },
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "submit": "Send contact request",
-      "submitting": "Sending...",
-      "messages": {
-        "invalid": "Please add a valid name and email.",
-        "sent": "Thanks. We will reach out.",
-        "rate_limited": "Too many submissions. Please try again later.",
-        "unknown": "Something went wrong. Please try again later."
-      }
+    "comingSoon": {
+      "title": "School contact coming soon",
+      "copy": "The school contact form is paused for the first public launch. Pilot information will be added here once the workshop format is ready."
     }
   },
   "learn": {
     "kicker": "Aiva, local AI, Learning Hub",
-    "title": "Your personal robot learning coach.",
+    "title": "A personal learning coach.",
     "copy": "R0607 combines a physical robot, local AI, voice, and courses in one on-robot Learning Hub.",
     "sections": {
       "personal": {
-        "title": "Your personal robot",
+        "title": "A personal robot",
         "copy": "The robot is framed as the learner's own build. Choices, projects, and Aiva interaction should feel personal rather than generic."
       },
       "aiva": {
         "title": "Aiva",
-        "copy": "Aiva is the robot's personality and learning coach. It helps explain lessons, debug code, and suggest next steps in context."
+        "copy": "Aiva is a personal learning coach and the robot's personality. It helps explain lessons, debug code, and suggest next steps in context."
       },
       "privacy": {
         "title": "Local-first privacy",
@@ -399,48 +381,104 @@
     }
   },
   "privacy": {
-    "title": "Privacy",
+    "title": "Data Privacy",
+    "lastUpdated": "Last updated: May 20, 2026",
     "intro": {
       "title": "Overview",
-      "copy": "R0607 collects as little website data as possible for the launch phase."
+      "copy": "This privacy notice explains how the R0607 website handles personal data during the launch phase. The site is currently an informational website without analytics, advertising tracking, contact forms, registrations, user accounts, payments, or newsletter signup."
     },
-    "signup": {
-      "title": "Workshop interest",
-      "copy": "The workshop form collects email, age group, language, consent, and timestamp so we can contact interested people about Berlin workshops."
+    "controller": {
+      "title": "Controller",
+      "copy": "Controller within the meaning of the GDPR: [Your full legal name], [street and house number], [postal code and city], Germany. Email: r0607.com."
+    },
+    "hosting": {
+      "title": "Hosting and server logs",
+      "copy": "When the website is accessed, the hosting provider may process technical access data such as IP address, date and time, requested URL, referrer, user agent, HTTP status code, and transferred data volume. This is necessary to deliver the website, maintain security, troubleshoot errors, and prevent abuse."
+    },
+    "storage": {
+      "title": "Cookies and local storage",
+      "copy": "The launch website does not use analytics cookies, advertising cookies, or third-party tracking pixels. It stores only the selected theme preference in the browser's local storage under the key \"theme\" so the requested light or dark mode can be restored. Local storage can be deleted in the browser settings. If non-essential cookies or analytics are added later, this notice will be updated and consent will be requested where required."
+    },
+    "contact": {
+      "title": "Contact by email",
+      "copy": "If email contact is initiated, the submitted email address, message content, and related metadata are processed to handle the request. The website itself currently does not provide contact, registration, or workshop signup forms."
     },
     "localAi": {
       "title": "Local AI",
       "copy": "Aiva, the LLM, voice features, and Learning Hub run directly on the robot. AI chat and voice learning data is not sent to cloud AI providers."
     },
-    "rights": {
-      "title": "Deletion",
-      "copy": "You can request deletion of workshop interest data by contacting hello@r0607.com or by using the unsubscribe link sent with your confirmation email."
+    "legalBasis": {
+      "title": "Legal basis",
+      "copy": "Technical hosting and security processing is based on legitimate interests in providing a secure and reliable website under Article 6(1)(f) GDPR. Email communication is processed to respond to the request under Article 6(1)(b) GDPR where it relates to pre-contractual communication, or Article 6(1)(f) GDPR for general inquiries. Theme storage is used to provide a user-requested website setting."
     },
-    "hosting": {
-      "title": "Hosting",
-      "copy": "The website is intended for Vercel hosting and Supabase in the EU region for workshop interest storage."
+    "recipients": {
+      "title": "Recipients and transfers",
+      "copy": "Personal data is not sold. Technical data may be processed by the hosting provider and other service providers used to operate the website. If a provider processes data outside the EU or EEA, appropriate safeguards such as adequacy decisions or standard contractual clauses should be used."
+    },
+    "retention": {
+      "title": "Retention",
+      "copy": "Server logs are retained only as long as needed for operation, security, and troubleshooting according to the hosting provider's configuration. Email inquiries are retained as long as needed to process the request and meet any applicable documentation obligations. No workshop signup database exists in this launch version."
+    },
+    "rights": {
+      "title": "Data subject rights",
+      "copy": "Where the legal requirements are met, data subjects have rights of access, rectification, erasure, restriction of processing, data portability, and objection. Consent, if requested in the future, can be withdrawn at any time with effect for the future."
+    },
+    "supervisory": {
+      "title": "Supervisory authority",
+      "copy": "Data subjects have the right to lodge a complaint with a competent data protection supervisory authority. In Germany this is usually the authority responsible for the federal state in which the controller is established."
+    },
+    "automated": {
+      "title": "Automated decision-making",
+      "copy": "The launch website does not use automated decision-making or profiling within the meaning of Article 22 GDPR."
+    },
+    "children": {
+      "title": "Children",
+      "copy": "The website describes robotics learning products and future workshops, but it does not currently collect registration data from children or parents. Future registration features will require a separate privacy review before launch."
+    },
+    "changes": {
+      "title": "Changes",
+      "copy": "This notice will be updated when forms, workshop registration, analytics, payments, newsletters, or database-backed features are added."
     }
   },
   "imprint": {
-    "title": "Imprint",
-    "operator": {
-      "heading": "Operator",
-      "name": "[Operator name — to be filled before launch]",
-      "street": "[Street and house number]",
-      "city": "[Postal code and city]",
-      "country": "Germany"
-    },
-    "responsible": {
-      "heading": "Responsible person",
-      "name": "[Full name of the responsible person]"
+    "title": "Legal Notice",
+    "lastUpdated": "Last updated: May 20, 2026",
+    "intro": "Information according to Section 5 of the German Digital Services Act (Digitale-Dienste-Gesetz, DDG). Replace the placeholders with the final legal details before publication.",
+    "provider": {
+      "title": "Service provider",
+      "copy": "[Your full legal name] · [street and house number] · [postal code and city] · Germany"
     },
     "contact": {
-      "heading": "Contact",
-      "email": "hello@r0607.com"
+      "title": "Contact",
+      "copy": "Email: r0607.com"
     },
-    "note": {
-      "heading": "Note",
-      "copy": "This website is a learning project. Workshop content and product details are subject to change."
+    "responsible": {
+      "title": "Responsible for content",
+      "copy": "Responsible for content under Section 18(2) of the German Interstate Media Treaty (MStV), if applicable: [Your full legal name], address as above."
+    },
+    "register": {
+      "title": "Commercial register",
+      "copy": "Not registered / [register court and registration number, if applicable]."
+    },
+    "vat": {
+      "title": "VAT identification",
+      "copy": "VAT ID according to Section 27a German VAT Act: not assigned / [VAT ID, if available]."
+    },
+    "supervisory": {
+      "title": "Supervisory authority",
+      "copy": "No activity requiring official authorization is currently offered through this website / [competent supervisory authority, if applicable]."
+    },
+    "consumerDispute": {
+      "title": "Consumer dispute resolution",
+      "copy": "No online contracts are concluded through this launch website. The European Online Dispute Resolution platform was discontinued on July 20, 2025. Unless legally required in the future, participation in consumer dispute resolution before a consumer arbitration board is not intended."
+    },
+    "liability": {
+      "title": "Content",
+      "copy": "The content on this website is provided for general information about R0607. Product, workshop, and availability details may change before launch."
+    },
+    "copyright": {
+      "title": "Copyright",
+      "copy": "Texts, design, code, graphics, and other materials on this website are protected by copyright unless otherwise stated. Use beyond what is permitted by law requires prior permission."
     }
   }
 }

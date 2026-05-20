@@ -36,10 +36,7 @@ export async function LanguagesSection() {
       aria-labelledby="languages-heading"
     >
       <div className="mb-10 lg:mb-12">
-        <p className="section-kicker">
-          {t("sections.languages.kicker")}
-        </p>
-        <h2 id="languages-heading" className="section-title mt-3">
+        <h2 id="languages-heading" className="section-title">
           {t("sections.languages.title")}
         </h2>
         <p className="lead-copy mt-4">

@@ -15,7 +15,7 @@ export default async function LearnPage({
     <main className="tron-grid pt-28">
       <section className="site-shell pb-20 lg:pb-28">
         <p className="section-kicker">{t("kicker")}</p>
-        <h1 className="page-title mt-4 max-w-5xl">
+        <h1 className="page-title mt-4">
           {t("title")}
         </h1>
         <p className="lead-copy mt-6">{t("copy")}</p>

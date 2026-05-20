@@ -20,7 +20,6 @@ const SECTION_COLORS = [
 
 interface ConfigSectionProps {
   id: string;
-  sectionNumber: string;
   sectionIndex: number;
   title: string;
   copy: string;
@@ -32,7 +31,6 @@ interface ConfigSectionProps {
 
 export function ConfigSection({
   id,
-  sectionNumber,
   sectionIndex,
   title,
   copy,
@@ -57,23 +55,11 @@ export function ConfigSection({
       className="py-14 first:pt-0 last:pb-0 lg:py-20"
       aria-labelledby={`${id}-heading`}
     >
-      {/* Heading area with ghost number backdrop */}
       <div className="relative mb-10 overflow-hidden lg:mb-12">
-        {/* Ghost section number */}
-        <span
-          className={`pointer-events-none absolute -right-2 -top-6 select-none font-display text-[9rem] font-black leading-none sm:text-[14rem] lg:text-[17rem] ${palette.ghost}`}
-          aria-hidden="true"
-        >
-          {sectionNumber}
-        </span>
-        {/* Gradient top accent bar */}
         <div className={`mb-6 h-px w-24 bg-gradient-to-r ${palette.accent}`} aria-hidden="true" />
-        <div className="flex items-baseline gap-3">
-          <span className="font-mono text-xs text-muted/50 lg:text-sm">{sectionNumber}</span>
-          <h2 id={`${id}-heading`} className="section-title">
-            {title}
-          </h2>
-        </div>
+        <h2 id={`${id}-heading`} className="section-title">
+          {title}
+        </h2>
         <p className="body-copy mt-4 max-w-3xl">{copy}</p>
       </div>
 

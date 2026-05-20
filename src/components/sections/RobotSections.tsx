@@ -75,7 +75,6 @@ export function RobotSections() {
       <div className="divide-y divide-border/40">
         <ConfigSection
           id="brain"
-          sectionNumber="01"
           sectionIndex={0}
           title={t("sections.brain.title")}
           copy={t("sections.brain.copy")}
@@ -85,7 +84,6 @@ export function RobotSections() {
         />
         <ConfigSection
           id="energy"
-          sectionNumber="02"
           sectionIndex={1}
           title={t("sections.energy.title")}
           copy={t("sections.energy.copy")}
@@ -95,7 +93,6 @@ export function RobotSections() {
         />
         <ConfigSection
           id="movement"
-          sectionNumber="03"
           sectionIndex={2}
           title={t("sections.movement.title")}
           copy={t("sections.movement.copy")}
@@ -105,7 +102,6 @@ export function RobotSections() {
         />
         <ConfigSection
           id="sensors"
-          sectionNumber="04"
           sectionIndex={3}
           title={t("sections.sensors.title")}
           copy={t("sections.sensors.copy")}

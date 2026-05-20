@@ -1,7 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { SchoolContactForm } from "@/components/forms/SchoolContactForm";
-
 const outcomeKeys = ["programming", "robotics", "debugging", "ai", "teamwork", "privacy"];
 
 export default async function EducationPage({
@@ -15,12 +13,12 @@ export default async function EducationPage({
 
   return (
     <main className="tron-grid pt-28">
-      <section className="site-shell grid gap-10 pb-20 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-14 lg:pb-28">
+      <section className="site-shell pb-20 lg:pb-28">
         <div>
           <p className="section-kicker">
             {t("kicker")}
           </p>
-          <h1 className="page-title mt-4 max-w-5xl">
+          <h1 className="page-title mt-4">
             {t("title")}
           </h1>
           <p className="lead-copy mt-6">
@@ -47,14 +45,13 @@ export default async function EducationPage({
             </h2>
             <p className="body-copy mt-4">{t("pilot.copy")}</p>
           </section>
+          <section className="mt-10 rounded-lg border border-cyan-soft/40 bg-surface/85 p-6 lg:p-8">
+            <h2 className="font-display text-2xl font-bold lg:text-3xl">
+              {t("comingSoon.title")}
+            </h2>
+            <p className="body-copy mt-4">{t("comingSoon.copy")}</p>
+          </section>
         </div>
-        <aside className="lg:sticky lg:top-24 lg:self-start">
-          <h2 className="mb-4 font-display text-2xl font-bold lg:text-3xl">
-            {t("formTitle")}
-          </h2>
-          <SchoolContactForm />
-          <p className="mt-4 text-sm leading-6 text-muted lg:text-base">{t("emailFallback")}</p>
-        </aside>
       </section>
     </main>
   );
