@@ -1,0 +1,484 @@
+{
+  "nav": {
+    "logo": "R0607",
+    "home": "Start",
+    "workshops": "Workshops",
+    "learn": "Lernen",
+    "education": "Bildung",
+    "theme": "Theme wechseln",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "footer": {
+    "home": "Start",
+    "slogan": "Imagine · Learn · Create",
+    "socialMedia": "Social Media",
+    "legalNotice": "Legal Notice",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "workshops": "Workshops",
+    "learn": "Lernen",
+    "education": "Bildung",
+    "privacy": "Datenschutz",
+    "imprint": "Impressum",
+    "copyright": "© 2026 R0607.",
+    "opensource": "Gebaut als local-first Lernprojekt."
+  },
+  "hero": {
+    "badge": "Berlin-Workshops bald verfügbar",
+    "heading": "Imagine · Learn · Create",
+    "subheading": "",
+    "copy": "Baue einen persönlichen Roboter zusammen, wähle Sensoren und Bewegungssysteme und lerne dann mit Aiva — einem lokalen KI-Coach, der direkt auf dem Roboter läuft.",
+    "start": "Roboter erkunden",
+    "workshops": "Workshops",
+    "stats": {
+      "brain": "On-device KI",
+      "code": "Python · C++ · Rust · Web",
+      "aiva": "Persönlicher Lerncoach",
+      "privacy": "Keine Cloud-KI-Uploads"
+    }
+  },
+  "sections": {
+    "brain": {
+      "kicker": "01 / Brain",
+      "title": "Das Gehirn",
+      "copy": "Das Gehirn ist ein Single-Board-Computer, auf dem die KI, Sensorik, der Code und der Learning Hub des Roboters laufen. Mehr Rechenleistung bedeutet smartere Reaktionen, schnellere Vision und fortgeschrittenes autonomes Verhalten."
+    },
+    "energy": {
+      "kicker": "02 / Energie",
+      "title": "Energie",
+      "copy": "Wähle den Akku, der einen Roboter antreibt. Beide laufen mit 20 V. Der größere Akku verdoppelt die Laufzeit und ermöglicht schwerere Aktoren."
+    },
+    "movement": {
+      "kicker": "03 / Bewegung",
+      "title": "Bewegung",
+      "copy": "Wähle, wie sich ein Roboter bewegt. Vom einfachen 4-Rad-Antrieb über omnidirektionale Räder und Ketten bis zu Laufbeinen oder einem Roboterarm — jede Variante eröffnet andere Projekte und Herausforderungen."
+    },
+    "sensors": {
+      "kicker": "04 / Sensoren",
+      "title": "Sensoren",
+      "copy": "Gib einem Roboter Wahrnehmung. Wähle einen Sensor, um zu erkunden, wie er funktioniert — R0607 unterstützt alle gleichzeitig und ist mit jedem Linux-kompatiblen Sensor erweiterbar."
+    },
+    "languages": {
+      "kicker": "05 / Programmierung",
+      "title": "Programmiersprachen",
+      "copy": "R0607 unterstützt mehrere Sprachen für unterschiedliche Anwendungsfälle. Der Einstieg gelingt mit Python für die Grundlagen, Web eignet sich für Dashboards, C++ für Geschwindigkeit und Rust für sichere autonome Echtzeitsysteme."
+    }
+  },
+  "components": {
+    "brain_basic": {
+      "name": "Basic",
+      "desc": "Das Einstiegs-Gehirn. Ideal, um Python zu lernen, mit Sensoren zu arbeiten und Aiva für interaktive Lektionen zu nutzen.",
+      "specs": [
+        "8 GB shared RAM",
+        "CPU + GPU",
+        "128 GB SSD"
+      ]
+    },
+    "brain_mega": {
+      "name": "Mega",
+      "desc": "Mehr Leistung für Sensorfusion, schnellere Aiva-Antworten und mehrere parallele Roboterprozesse.",
+      "specs": [
+        "16 GB shared RAM",
+        "CPU + GPU",
+        "256 GB SSD"
+      ]
+    },
+    "brain_super": {
+      "name": "Super",
+      "desc": "Betreibt Echtzeit-Computer-Vision, größere lokale KI-Modelle und komplexe Multi-Sensor-Pipelines.",
+      "specs": [
+        "64 GB shared RAM",
+        "Enhanced CPU + GPU",
+        "512 GB SSD"
+      ]
+    },
+    "brain_ultra": {
+      "name": "Ultra",
+      "desc": "Maximale On-device-Rechenleistung für fortgeschrittene autonome KI, OpenCV+CUDA-Vision und Robotik auf Forschungsniveau.",
+      "specs": [
+        "128 GB shared RAM",
+        "Top-tier CPU + GPU",
+        "1 TB SSD"
+      ]
+    },
+    "battery_small": {
+      "name": "Kleiner Akku",
+      "desc": "Kompakt und leicht. Ideal für kleinere Builds, bei denen Gewicht zählt, oder für Lerneinheiten.",
+      "specs": [
+        "20 V",
+        "2 Ah",
+        "40 Wh capacity"
+      ]
+    },
+    "battery_big": {
+      "name": "Großer Akku",
+      "desc": "Doppelte Laufzeit. Versorgt schwerere Aktoren und unterstützt längeren autonomen Betrieb.",
+      "specs": [
+        "20 V",
+        "4 Ah",
+        "80 Wh capacity"
+      ]
+    },
+    "wheels_4wd": {
+      "name": "4-Rad-Auto",
+      "desc": "Klassischer 4-Rad-Antrieb mit einem Antriebsmotor und einem Lenkservo. Schnell, einfach und ein großartiger Einstieg in die Antriebsprogrammierung.",
+      "specs": [
+        "1 drive motor",
+        "1 steering servo",
+        "4 wheels"
+      ]
+    },
+    "tracks": {
+      "name": "Panzerketten",
+      "desc": "Zwei unabhängig angetriebene Ketten für kraftvolle, stabile Bewegung über unebenes Gelände und Steigungen.",
+      "specs": [
+        "2 independent motors",
+        "Tank-style tracks",
+        "High traction"
+      ]
+    },
+    "omni_4": {
+      "name": "4 Omni-Räder",
+      "desc": "Vier motorisierte Omni-/Mecanum-Räder ermöglichen volle 360°-Seitwärtsbewegung — seitlich fahren, auf der Stelle drehen oder für komplexe Pfade kombinieren.",
+      "specs": [
+        "4 motors",
+        "Mecanum/omni wheels",
+        "360° lateral movement"
+      ]
+    },
+    "walker": {
+      "name": "Walker",
+      "desc": "Gelenkige Beine für All-Terrain-Bewegung. Eine tolle Herausforderung, um Kinematik, Gangmuster und Servo-Koordination zu lernen.",
+      "specs": [
+        "4 motors",
+        "Articulated legs",
+        "All-terrain"
+      ]
+    },
+    "robotic_arm": {
+      "name": "Roboterarm",
+      "desc": "Ein mehrachsiger Roboterarm zum Greifen, Aufnehmen und präzisen Manipulieren. Perfekt, um inverse Kinematik zu lernen.",
+      "specs": [
+        "4 servo motors",
+        "Multi-axis arm",
+        "Gripping & manipulation"
+      ]
+    },
+    "stereo_camera": {
+      "name": "Stereo Camera",
+      "desc": "Zwei synchronisierte Linsen für passive Tiefenschätzung und räumliche Wahrnehmung — ohne dedizierte Tiefenhardware.",
+      "specs": [
+        "Duale Linsen für Tiefenwahrnehmung",
+        "Räumliches Mapping",
+        "Ohne dedizierte Hardware"
+      ]
+    },
+    "ultrasound": {
+      "name": "Ultraschall",
+      "desc": "Einfache, zuverlässige Abstandsmessung mit Schallimpulsen. Ein klassischer Sensor für Einsteiger in die Robotik-Grundlagen.",
+      "specs": [
+        "Schall-Abstandsmessung",
+        "2 cm – 4 m Reichweite",
+        "Sparsam, anfängerfreundlich"
+      ]
+    },
+    "infrared": {
+      "name": "Infrarot",
+      "desc": "Kurzstrecken-Näherungserkennung mit Infrarotlicht. Leicht und stromsparend für Kantenerkennung und Linienfolgen.",
+      "specs": [
+        "Kurzstrecken-Näherung",
+        "Linienfolgen & Kantenerkennung",
+        "Leichtgewichtig"
+      ]
+    },
+    "lidar": {
+      "name": "LiDAR",
+      "desc": "360° rotierender Laserscanner, der eine präzise 2D-Karte der Umgebung des Roboters erstellt. Der Goldstandard für autonome Navigation.",
+      "specs": [
+        "360° Laserscan",
+        "Präzise 2D-Umgebungskarte",
+        "Goldstandard für Navigation"
+      ]
+    },
+    "imu": {
+      "name": "IMU / Gyroscope",
+      "desc": "Erfasst Orientierung, Beschleunigung und Winkelgeschwindigkeit. Essenziell für Balance-Regelung und präzise Bewegung.",
+      "specs": [
+        "Orientierung + Beschleunigung",
+        "Winkelgeschwindigkeits-Tracking",
+        "Essenziell für Balance"
+      ]
+    },
+    "sensor_more": {
+      "name": "Viele mehr",
+      "desc": "R0607 unterstützt jeden Linux-kompatiblen Sensor. GPS-Module, Temperatursensoren, Mikrofon-Arrays, Tiefenkameras, Gassensoren und mehr — die Plattform ist vollständig erweiterbar."
+    },
+    "python": {
+      "name": "Python",
+      "desc": "Der beste Einstieg. Python hat ein riesiges Ökosystem für Robotik, Machine Learning und Scripting — inklusive ROS2, TensorFlow und PyTorch.",
+      "useCases": [
+        "Scripting & Automatisierung",
+        "Verarbeitung von Sensordaten",
+        "Machine Learning"
+      ]
+    },
+    "web": {
+      "name": "Web (HTML · CSS · JS · TypeScript)",
+      "desc": "Baue das Dashboard, die Steueroberflächen und Datenvisualisierungen des Roboters. Der Learning Hub selbst ist eine Next.js-Web-App, die auf dem Roboter läuft.",
+      "useCases": [
+        "Robot-Dashboard-UI",
+        "REST APIs",
+        "Echtzeit-Datenvisualisierung"
+      ]
+    },
+    "cpp": {
+      "name": "C++",
+      "desc": "Hochperformanter Echtzeit-Code. Nutze OpenCV+CUDA für schnelle Computer-Vision-Pipelines, latenzarme Motorsteuerung und leistungsstarke Algorithmen.",
+      "useCases": [
+        "Echtzeit-Computer-Vision (OpenCV+CUDA)",
+        "Latenzarme Motorsteuerung",
+        "Hochperformante Algorithmen"
+      ]
+    },
+    "rust": {
+      "name": "Rust",
+      "desc": "Memory-safe Systemprogrammierung für autonome Echtzeit-Robotik. Rust eliminiert ganze Klassen von Bugs bereits zur Compile-Zeit — kritisch für Embedded- und sicherheitskritischen Code.",
+      "useCases": [
+        "Sichere autonome Echtzeitsteuerung",
+        "Embedded systems",
+        "Memory-safe Firmware"
+      ]
+    }
+  },
+  "ui": {
+    "selected": "Ausgewählt",
+    "selectOption": "Option auswählen",
+    "learnMore": "Mehr erfahren",
+    "exploreSections": "Bereiche erkunden",
+    "robotControls": {
+      "openMenu": "Robotersteuerung öffnen",
+      "closeMenu": "Robotersteuerung schließen",
+      "startAnimation": "Roboteranimation starten",
+      "stopAnimation": "Roboteranimation stoppen",
+      "rotateLeft": "Roboter nach links drehen",
+      "rotateRight": "Roboter nach rechts drehen",
+      "zoomIn": "Hineinzoomen",
+      "zoomOut": "Herauszoomen"
+    }
+  },
+  "workshops": {
+    "kicker": "Berlin-Workshops",
+    "title": "Hands-on Roboterbau für neugierige Lernende.",
+    "copy": "R0607-Workshops kommen bald nach Berlin. Termine, Altersorientierung und das erste Kursformat werden hier veröffentlicht, sobald sie bereit sind.",
+    "featured": {
+      "title": "Basic Programming mit R0607",
+      "status": "Coming soon",
+      "format": {
+        "label": "Format",
+        "value": "2 Stunden/Woche · 5 Wochen"
+      },
+      "age": {
+        "label": "Alter",
+        "value": "12+ · Altersgruppen"
+      },
+      "location": {
+        "label": "Ort",
+        "value": "Berlin · TBD"
+      }
+    },
+    "comingSoon": {
+      "title": "Registrierung kommt bald",
+      "copy": "Die Workshop-Registrierung ist noch nicht geöffnet. Diese Launch-Version hält die Website einfach, während das erste Berliner Format finalisiert wird."
+    },
+    "details": {
+      "learn": {
+        "title": "Was Lernende bauen",
+        "copy": "Lernende bauen und programmieren einen Roboter, arbeiten mit Sensoren und Bewegung und lernen, wie lokale KI Robotikprojekte unterstützen kann."
+      },
+      "bring": {
+        "title": "Was mitzubringen ist",
+        "copy": "Details werden vor der ersten Kohorte geteilt. Ziel ist, das Setup praktisch und geführt zu halten."
+      },
+      "cost": {
+        "title": "Preis",
+        "copy": "Die Preise stehen noch nicht fest, während das Workshop-Format validiert wird."
+      },
+      "registration": {
+        "title": "Registrierung",
+        "copy": "Die Registrierung wird ergänzt, sobald der erste Workshop-Zeitplan und die Kohortendetails bestätigt sind."
+      }
+    }
+  },
+  "education": {
+    "kicker": "Schulen und Institutionen",
+    "title": "Robotik- und KI-Lernen, entwickelt für das Klassenzimmer.",
+    "copy": "R0607 startet mit Berliner Workshop-Kohorten und wächst später in Richtung möglicher Schul-Piloten, sobald Lernmaterial und Hardware stabil genug sind.",
+    "outcomes": {
+      "programming": {
+        "title": "Programmiergrundlagen",
+        "copy": "Lernende schreiben Code, der einen physischen Roboter verändert, den sie sehen, testen und verbessern können."
+      },
+      "robotics": {
+        "title": "Robotik und Sensoren",
+        "copy": "Hardware-Entscheidungen verbinden Motoren, Sensoren, Wahrnehmung und Rückkopplungsschleifen."
+      },
+      "debugging": {
+        "title": "Debugging und Systemdenken",
+        "copy": "Schülerinnen und Schüler lernen, über Code, Mechanik, Energie und Daten gemeinsam nachzudenken."
+      },
+      "ai": {
+        "title": "KI-Kompetenz",
+        "copy": "Lokale KI macht modernes Assistenzverhalten greifbar, ohne das System zu verstecken."
+      },
+      "teamwork": {
+        "title": "Teamwork",
+        "copy": "Workshops fördern projektbasiertes Lernen, Kommunikation und Iteration."
+      },
+      "privacy": {
+        "title": "Datenschutzbewusstes Computing",
+        "copy": "Die local-first Architektur gibt Schulen einen konkreten Rahmen, um verantwortungsvolle Technologie zu besprechen."
+      }
+    },
+    "pilot": {
+      "title": "Pilotformat",
+      "copy": "Kleine Berliner Workshops kommen zuerst. Schul-Piloten können folgen, sobald das Format ausgereift ist — mit klaren Altersgruppen, Unterstützung für Lehrkräfte sowie praktischen Erwartungen an Raum und Ausstattung."
+    },
+    "comingSoon": {
+      "title": "Schulkontakt kommt bald",
+      "copy": "Das Kontaktformular für Schulen ist für den ersten öffentlichen Launch pausiert. Informationen zu Piloten werden ergänzt, sobald das Workshop-Format bereit ist."
+    }
+  },
+  "learn": {
+    "kicker": "Aiva, lokale KI, Learning Hub",
+    "title": "Ein persönlicher Lerncoach.",
+    "copy": "R0607 verbindet einen physischen Roboter, lokale KI, Sprache und Kurse in einem Learning Hub direkt auf dem Roboter.",
+    "sections": {
+      "personal": {
+        "title": "Ein persönlicher Roboter",
+        "copy": "Der Roboter ist als eigener Build der Lernenden gedacht. Entscheidungen, Projekte und die Interaktion mit Aiva sollen persönlich statt generisch wirken."
+      },
+      "aiva": {
+        "title": "Aiva",
+        "copy": "Aiva ist ein persönlicher Lerncoach und die Persönlichkeit des Roboters. Sie hilft dabei, Lektionen zu erklären, Code zu debuggen und passende nächste Schritte vorzuschlagen."
+      },
+      "privacy": {
+        "title": "Local-first Datenschutz",
+        "copy": "Das LLM und das Spracherlebnis laufen direkt auf dem Roboter. KI-Chat- und Sprachlerninteraktionen werden nicht an Cloud-KI-Anbieter gesendet."
+      },
+      "hub": {
+        "title": "Learning Hub",
+        "copy": "Der Learning Hub ist eine Web-App, die vom Roboter bereitgestellt wird. Er enthält KI-Chat, Sprachinteraktion, Kurse, Guides und Projektmaterial."
+      },
+      "path": {
+        "title": "Lernpfad",
+        "copy": "Der Lehrplan führt von grundlegender Programmierung über Robotik, Game Development, Machine Learning und KI-Entwicklung bis hin zu autonomen Robotern."
+      },
+      "parents": {
+        "title": "Für Eltern und Schulen",
+        "copy": "Das Programm wird Altersorientierung, Workshop-Format, Sicherheitsgrenzen, Datenschutz und Voraussetzungen vor dem Start erklären."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Datenschutz",
+    "lastUpdated": "Stand: 20. Mai 2026",
+    "intro": {
+      "title": "Überblick",
+      "copy": "Diese Datenschutzerklärung erklärt, wie die R0607-Website in der Launch-Phase mit personenbezogenen Daten umgeht. Die Website ist aktuell eine reine Informationswebsite ohne Analytics, Werbe-Tracking, Kontaktformulare, Registrierungen, Nutzerkonten, Zahlungen oder Newsletter-Anmeldung."
+    },
+    "controller": {
+      "title": "Verantwortlicher",
+      "copy": "Verantwortlicher im Sinne der DSGVO: [Vollständiger rechtlicher Name], [Straße und Hausnummer], [Postleitzahl und Ort], Deutschland. E-Mail: r0607.com."
+    },
+    "hosting": {
+      "title": "Hosting und Server-Logfiles",
+      "copy": "Beim Aufruf der Website kann der Hosting-Anbieter technische Zugriffsdaten verarbeiten, zum Beispiel IP-Adresse, Datum und Uhrzeit, aufgerufene URL, Referrer, User-Agent, HTTP-Statuscode und übertragene Datenmenge. Dies ist notwendig, um die Website auszuliefern, die Sicherheit zu gewährleisten, Fehler zu analysieren und Missbrauch zu verhindern."
+    },
+    "storage": {
+      "title": "Cookies und Local Storage",
+      "copy": "Die Launch-Website verwendet keine Analytics-Cookies, Werbe-Cookies oder Tracking-Pixel von Dritten. Gespeichert wird nur die gewählte Theme-Einstellung im Local Storage des Browsers unter dem Schlüssel \"theme\", damit der gewünschte helle oder dunkle Modus wiederhergestellt werden kann. Local Storage kann in den Browser-Einstellungen gelöscht werden. Wenn später nicht notwendige Cookies oder Analytics ergänzt werden, wird diese Erklärung aktualisiert und eine Einwilligung eingeholt, soweit sie erforderlich ist."
+    },
+    "contact": {
+      "title": "Kontakt per E-Mail",
+      "copy": "Wenn Kontakt per E-Mail aufgenommen wird, werden die übermittelte E-Mail-Adresse, der Nachrichteninhalt und dazugehörige Metadaten verarbeitet, um die Anfrage zu bearbeiten. Die Website selbst enthält derzeit keine Kontakt-, Registrierungs- oder Workshop-Anmeldeformulare."
+    },
+    "localAi": {
+      "title": "Lokale KI",
+      "copy": "Aiva, das LLM, Sprachfunktionen und der Learning Hub laufen direkt auf dem Roboter. KI-Chat- und Sprachlerndaten werden nicht an Cloud-KI-Anbieter gesendet."
+    },
+    "legalBasis": {
+      "title": "Rechtsgrundlagen",
+      "copy": "Die Verarbeitung technischer Hosting- und Sicherheitsdaten erfolgt auf Grundlage berechtigter Interessen an einer sicheren und zuverlässigen Website gemäß Art. 6 Abs. 1 lit. f DSGVO. E-Mail-Kommunikation wird zur Beantwortung der Anfrage verarbeitet, je nach Inhalt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglicher Kommunikation oder Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Anfragen. Die Theme-Speicherung dient der Bereitstellung einer vom Nutzer gewünschten Website-Einstellung."
+    },
+    "recipients": {
+      "title": "Empfänger und Übermittlungen",
+      "copy": "Personenbezogene Daten werden nicht verkauft. Technische Daten können durch den Hosting-Anbieter und weitere Dienstleister verarbeitet werden, die für den Betrieb der Website eingesetzt werden. Wenn ein Anbieter Daten außerhalb der EU oder des EWR verarbeitet, sollten geeignete Garantien wie Angemessenheitsbeschlüsse oder Standardvertragsklauseln eingesetzt werden."
+    },
+    "retention": {
+      "title": "Speicherdauer",
+      "copy": "Server-Logfiles werden nur so lange gespeichert, wie es für Betrieb, Sicherheit und Fehleranalyse nach der Konfiguration des Hosting-Anbieters erforderlich ist. E-Mail-Anfragen werden so lange gespeichert, wie es für die Bearbeitung der Anfrage und mögliche Dokumentationspflichten notwendig ist. In dieser Launch-Version gibt es keine Workshop-Anmeldedatenbank."
+    },
+    "rights": {
+      "title": "Betroffenenrechte",
+      "copy": "Soweit die gesetzlichen Voraussetzungen vorliegen, bestehen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Eine Einwilligung, falls sie künftig eingeholt wird, kann jederzeit mit Wirkung für die Zukunft widerrufen werden."
+    },
+    "supervisory": {
+      "title": "Aufsichtsbehörde",
+      "copy": "Betroffene Personen haben das Recht, Beschwerde bei einer zuständigen Datenschutzaufsichtsbehörde einzulegen. In Deutschland ist dies in der Regel die Aufsichtsbehörde des Bundeslandes, in dem der Verantwortliche niedergelassen ist."
+    },
+    "automated": {
+      "title": "Automatisierte Entscheidungen",
+      "copy": "Die Launch-Website verwendet keine automatisierten Entscheidungen oder Profiling im Sinne von Art. 22 DSGVO."
+    },
+    "children": {
+      "title": "Kinder",
+      "copy": "Die Website beschreibt Robotik-Lernprodukte und zukünftige Workshops, erfasst derzeit aber keine Registrierungsdaten von Kindern oder Eltern. Künftige Registrierungsfunktionen benötigen vor Veröffentlichung eine eigene Datenschutzprüfung."
+    },
+    "changes": {
+      "title": "Änderungen",
+      "copy": "Diese Erklärung wird aktualisiert, wenn Formulare, Workshop-Registrierung, Analytics, Zahlungen, Newsletter oder datenbankgestützte Funktionen ergänzt werden."
+    }
+  },
+  "imprint": {
+    "title": "Impressum",
+    "lastUpdated": "Stand: 20. Mai 2026",
+    "intro": "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG). Die Platzhalter müssen vor Veröffentlichung durch die finalen rechtlichen Angaben ersetzt werden.",
+    "provider": {
+      "title": "Diensteanbieter",
+      "copy": "[Vollständiger rechtlicher Name] · [Straße und Hausnummer] · [Postleitzahl und Ort] · Deutschland"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "copy": "E-Mail: r0607.com"
+    },
+    "responsible": {
+      "title": "Inhaltlich verantwortlich",
+      "copy": "Verantwortlich für Inhalte gemäß § 18 Abs. 2 Medienstaatsvertrag (MStV), falls anwendbar: [Vollständiger rechtlicher Name], Anschrift wie oben."
+    },
+    "register": {
+      "title": "Handelsregister",
+      "copy": "Nicht eingetragen / [Registergericht und Registernummer, falls zutreffend]."
+    },
+    "vat": {
+      "title": "Umsatzsteuer-ID",
+      "copy": "Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: nicht vergeben / [USt-IdNr., falls vorhanden]."
+    },
+    "supervisory": {
+      "title": "Aufsichtsbehörde",
+      "copy": "Über diese Website wird derzeit keine erlaubnispflichtige Tätigkeit angeboten / [zuständige Aufsichtsbehörde, falls zutreffend]."
+    },
+    "consumerDispute": {
+      "title": "Verbraucherstreitbeilegung",
+      "copy": "Über diese Launch-Website werden keine Online-Verträge geschlossen. Die europäische Online-Streitbeilegungsplattform wurde zum 20. Juli 2025 eingestellt. Soweit künftig keine gesetzliche Pflicht besteht, ist eine Teilnahme an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht vorgesehen."
+    },
+    "liability": {
+      "title": "Inhalte",
+      "copy": "Die Inhalte dieser Website dienen der allgemeinen Information über R0607. Produkt-, Workshop- und Verfügbarkeitsangaben können sich bis zum Launch ändern."
+    },
+    "copyright": {
+      "title": "Urheberrecht",
+      "copy": "Texte, Design, Code, Grafiken und sonstige Materialien dieser Website sind urheberrechtlich geschützt, sofern nicht anders angegeben. Eine Nutzung über das gesetzlich Erlaubte hinaus erfordert eine vorherige Erlaubnis."
+    }
+  }
+}
