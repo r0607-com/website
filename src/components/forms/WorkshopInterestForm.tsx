@@ -14,26 +14,26 @@ export function WorkshopInterestForm({ locale }: { locale: string }) {
   const [state, action] = useActionState(registerWorkshopInterest, initialState);
 
   return (
-    <form action={action} className="rounded-lg border border-border bg-surface p-6">
+    <form action={action} className="rounded-lg border border-border bg-surface p-6 lg:p-8">
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" />
       <input type="hidden" name="language" value={locale === "de" ? "de" : "en"} />
-      <div className="grid gap-4">
-        <label className="grid gap-2 text-sm font-medium">
+      <div className="grid gap-5">
+        <label className="grid gap-2 text-sm font-medium lg:text-base">
           {t("email")}
           <input
             required
             type="email"
             name="email"
             autoComplete="email"
-            className="focus-ring rounded-md border border-border bg-background px-3 py-3 text-foreground"
+            className="focus-ring rounded-md border border-border bg-background px-3 py-3 text-foreground lg:px-4 lg:text-base"
           />
         </label>
-        <label className="grid gap-2 text-sm font-medium">
+        <label className="grid gap-2 text-sm font-medium lg:text-base">
           {t("ageGroup")}
           <select
             required
             name="age_group"
-            className="focus-ring rounded-md border border-border bg-background px-3 py-3 text-foreground"
+            className="focus-ring rounded-md border border-border bg-background px-3 py-3 text-foreground lg:px-4 lg:text-base"
             defaultValue=""
           >
             <option value="" disabled>
@@ -46,7 +46,7 @@ export function WorkshopInterestForm({ locale }: { locale: string }) {
             ))}
           </select>
         </label>
-        <label className="flex items-start gap-3 text-sm leading-6 text-muted">
+        <label className="flex items-start gap-3 text-sm leading-6 text-muted lg:text-base lg:leading-7">
           <input
             required
             type="checkbox"
@@ -78,7 +78,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="focus-ring rounded-md bg-cyan-soft px-4 py-3 font-medium text-background disabled:cursor-not-allowed disabled:opacity-60"
+      className="focus-ring rounded-md bg-cyan-soft px-4 py-3 font-medium text-background disabled:cursor-not-allowed disabled:opacity-60 lg:px-6 lg:text-base"
     >
       {pending ? t("submitting") : t("submit")}
     </button>

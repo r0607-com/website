@@ -2,6 +2,7 @@
 
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -16,6 +17,19 @@ const navItems = [
   { href: "learn", key: "learn" },
   { href: "education", key: "education" },
 ] as const;
+
+function LogoMark({ className = "size-10" }: { className?: string }) {
+  return (
+    <Image
+      src="/icon.svg"
+      alt=""
+      width={42}
+      height={42}
+      className={`brand-mark ${className}`}
+      aria-hidden="true"
+    />
+  );
+}
 
 export function Navbar({ locale }: { locale: Locale }) {
   const t = useTranslations("nav");
@@ -42,32 +56,25 @@ export function Navbar({ locale }: { locale: Locale }) {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
-        <nav className="mx-auto flex min-h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <nav className="site-shell flex min-h-16 items-center justify-between gap-4 lg:min-h-20">
           <Link
             href={`/${locale}`}
-            className="focus-ring group flex items-center gap-3 rounded-md"
+            className="focus-ring group flex min-h-10 items-center gap-3 rounded-md"
             aria-label={t("home")}
           >
-            <span className="grid size-9 place-items-center rounded border border-cyan-soft/70 text-cyan-soft shadow-[0_0_24px_var(--glow-cyan)]">
-              +
-            </span>
-            <span>
-              <span className="font-display text-xl font-bold tracking-normal logo-gradient">
-                R0607
-              </span>
-              <span className="hidden text-xs text-muted sm:block">
-                {t("tagline")}
-              </span>
+            <LogoMark className="size-10 lg:size-12" />
+            <span className="brand-wordmark logo-gradient">
+              R0607
             </span>
           </Link>
 
           {/* Desktop nav links */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-1 md:flex lg:gap-2">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={`/${locale}/${item.href}`}
-                className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted transition hover:bg-surface-alt hover:text-foreground"
+                className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted transition hover:bg-surface-alt hover:text-foreground lg:px-4 lg:text-base"
               >
                 {t(item.key)}
               </Link>
@@ -77,7 +84,7 @@ export function Navbar({ locale }: { locale: Locale }) {
           <div className="flex items-center gap-2">
             <Link
               href={languageHref}
-              className="focus-ring rounded-md border border-border bg-surface px-3 py-2 font-mono text-xs text-muted transition hover:border-cyan-soft hover:text-foreground"
+              className="focus-ring rounded-md border border-border bg-surface px-3 py-2 font-mono text-xs text-muted transition hover:border-cyan-soft hover:text-foreground lg:px-4 lg:py-2.5 lg:text-sm"
             >
               {nextLocale.toUpperCase()}
             </Link>
@@ -85,7 +92,7 @@ export function Navbar({ locale }: { locale: Locale }) {
               type="button"
               aria-label={t("theme")}
               onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-              className="focus-ring grid size-10 place-items-center rounded-md border border-border bg-surface text-muted transition hover:border-cyan-soft hover:text-foreground"
+              className="focus-ring grid size-10 place-items-center rounded-md border border-border bg-surface text-muted transition hover:border-cyan-soft hover:text-foreground lg:size-11"
             >
               {resolvedTheme === "dark" ? <Sun size={18} /> : resolvedTheme === "light" ? <Moon size={18} /> : null}
             </button>
@@ -133,8 +140,11 @@ export function Navbar({ locale }: { locale: Locale }) {
               aria-label="Navigation menu"
             >
               <div className="mb-8 flex items-center justify-between">
-                <span className="font-display text-lg font-bold logo-gradient">
-                  R0607
+                <span className="flex items-center gap-3">
+                  <LogoMark className="size-10" />
+                  <span className="brand-wordmark logo-gradient">
+                    R0607
+                  </span>
                 </span>
                 <button
                   type="button"

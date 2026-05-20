@@ -1,7 +1,6 @@
 {
   "nav": {
     "logo": "R0607",
-    "tagline": "Assemble. Program. Think.",
     "home": "Home",
     "events": "Workshops",
     "learn": "Learn",
@@ -22,8 +21,8 @@
   },
   "hero": {
     "badge": "Berlin workshops coming soon",
-    "heading": "Build the robot.",
-    "subheading": "Learn the future.",
+    "heading": "Imagine · Learn · Create",
+    "subheading": "",
     "copy": "Assemble your personal robot, choose sensors and motion systems, then learn with Aiva — a local AI coach running directly on the robot.",
     "start": "Explore the robot",
     "workshops": "Workshop interest",
@@ -251,7 +250,17 @@
     "selected": "Selected",
     "selectOption": "Select option",
     "learnMore": "Learn more",
-    "exploreSections": "Explore sections"
+    "exploreSections": "Explore sections",
+    "robotControls": {
+      "openMenu": "Open robot controls",
+      "closeMenu": "Close robot controls",
+      "startAnimation": "Start robot animation",
+      "stopAnimation": "Stop robot animation",
+      "rotateLeft": "Rotate robot left",
+      "rotateRight": "Rotate robot right",
+      "zoomIn": "Zoom in",
+      "zoomOut": "Zoom out"
+    }
   },
   "events": {
     "kicker": "Berlin workshops",

@@ -1,6 +1,5 @@
 "use client";
 
-import { type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 
 import { OptionButton } from "@/components/ui/OptionButton";
@@ -29,7 +28,6 @@ interface ConfigSectionProps {
   selectedIds: string | string[];
   multiSelect?: boolean;
   onSelect: (id: string) => void;
-  viewer: ReactNode;
 }
 
 export function ConfigSection({
@@ -42,7 +40,6 @@ export function ConfigSection({
   selectedIds,
   multiSelect = false,
   onSelect,
-  viewer,
 }: ConfigSectionProps) {
   const t = useTranslations("ui");
   const palette = SECTION_COLORS[sectionIndex % SECTION_COLORS.length];
@@ -57,14 +54,14 @@ export function ConfigSection({
   return (
     <section
       id={id}
-      className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8"
+      className="py-14 first:pt-0 last:pb-0 lg:py-20"
       aria-labelledby={`${id}-heading`}
     >
       {/* Heading area with ghost number backdrop */}
-      <div className="relative mb-10 overflow-hidden">
+      <div className="relative mb-10 overflow-hidden lg:mb-12">
         {/* Ghost section number */}
         <span
-          className={`pointer-events-none absolute -right-2 -top-6 select-none font-display text-[9rem] font-black leading-none sm:text-[14rem] ${palette.ghost}`}
+          className={`pointer-events-none absolute -right-2 -top-6 select-none font-display text-[9rem] font-black leading-none sm:text-[14rem] lg:text-[17rem] ${palette.ghost}`}
           aria-hidden="true"
         >
           {sectionNumber}
@@ -72,59 +69,53 @@ export function ConfigSection({
         {/* Gradient top accent bar */}
         <div className={`mb-6 h-px w-24 bg-gradient-to-r ${palette.accent}`} aria-hidden="true" />
         <div className="flex items-baseline gap-3">
-          <span className="font-mono text-xs text-muted/50">{sectionNumber}</span>
-          <h2 id={`${id}-heading`} className="font-display text-3xl font-bold sm:text-4xl">
+          <span className="font-mono text-xs text-muted/50 lg:text-sm">{sectionNumber}</span>
+          <h2 id={`${id}-heading`} className="section-title">
             {title}
           </h2>
         </div>
-        <p className="mt-3 max-w-2xl text-lg leading-7 text-muted">{copy}</p>
+        <p className="body-copy mt-4 max-w-3xl">{copy}</p>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-        {/* 3D viewer */}
-        <div className="order-2 lg:order-1">{viewer}</div>
-
-        {/* Options + info box */}
-        <div className="order-1 space-y-4 lg:order-2">
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {options.map((option) => (
-              <OptionButton
-                key={option.id}
-                id={option.id}
-                label={option.name}
-                selected={isSelected(option.id)}
-                onClick={() => onSelect(option.id)}
-                icon={option.icon}
-                selectedLabel={t("selected")}
-              />
-            ))}
-          </div>
-
-          {/* Info box — shows desc + specs for selected option */}
-          {currentOption ? (
-            <div className="rounded-xl border border-border bg-surface/80 p-5">
-              <p className="font-display text-base font-bold text-foreground">{currentOption.name}</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted">{currentOption.desc}</p>
-              {currentOption.specs && currentOption.specs.length > 0 ? (
-                <>
-                  <div className="my-3 h-px bg-border/50" />
-                  <ul className="space-y-1.5">
-                    {currentOption.specs.map((spec) => (
-                      <li key={spec} className="flex items-center gap-2 text-sm text-foreground">
-                        <span className="size-1.5 flex-shrink-0 rounded-full bg-cyan-soft" aria-hidden="true" />
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : null}
-            </div>
-          ) : null}
-
-          {multiSelect && Array.isArray(selectedIds) && selectedIds.length > 1 ? (
-            <p className="text-xs text-muted">{selectedIds.length} sensors active — all work together</p>
-          ) : null}
+      <div className="space-y-5">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {options.map((option) => (
+            <OptionButton
+              key={option.id}
+              id={option.id}
+              label={option.name}
+              selected={isSelected(option.id)}
+              onClick={() => onSelect(option.id)}
+              icon={option.icon}
+              selectedLabel={t("selected")}
+            />
+          ))}
         </div>
+
+        {/* Info box shows desc + specs for selected option */}
+        {currentOption ? (
+          <div className="rounded-xl border border-border bg-surface/80 p-5 lg:p-6">
+            <p className="font-display text-lg font-bold text-foreground lg:text-xl">{currentOption.name}</p>
+            <p className="body-copy mt-2">{currentOption.desc}</p>
+            {currentOption.specs && currentOption.specs.length > 0 ? (
+              <>
+                <div className="my-4 h-px bg-border/50" />
+                <ul className="space-y-2">
+                  {currentOption.specs.map((spec) => (
+                    <li key={spec} className="flex items-center gap-2 text-sm text-foreground lg:text-base">
+                      <span className="size-1.5 flex-shrink-0 rounded-full bg-cyan-soft" aria-hidden="true" />
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
+          </div>
+        ) : null}
+
+        {multiSelect && Array.isArray(selectedIds) && selectedIds.length > 1 ? (
+          <p className="text-sm text-muted">{selectedIds.length} sensors active - all work together</p>
+        ) : null}
       </div>
     </section>
   );

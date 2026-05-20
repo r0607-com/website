@@ -33,7 +33,7 @@ export function OptionButton({
       onClick={onClick}
       aria-pressed={selected}
       className={cn(
-        "focus-ring group relative flex w-full items-center gap-3 rounded-xl border bg-background/70 px-4 py-3 text-left transition-all",
+        "focus-ring group relative flex w-full items-center gap-3 rounded-xl border bg-background/70 px-4 py-3 text-left transition-all lg:gap-4 lg:px-5 lg:py-4",
         "hover:border-cyan-soft hover:shadow-[0_0_20px_var(--glow-cyan)]",
         selected
           ? "border-cyan-soft bg-surface shadow-[0_0_18px_var(--glow-cyan)]"
@@ -43,17 +43,17 @@ export function OptionButton({
     >
       <span
         className={cn(
-          "grid size-9 flex-shrink-0 place-items-center rounded-lg border transition-colors",
+          "grid size-9 flex-shrink-0 place-items-center rounded-lg border transition-colors lg:size-11",
           selected
             ? "border-cyan-soft bg-cyan-soft/10 text-cyan-soft"
             : "border-border bg-surface text-muted",
         )}
       >
-        <Icon size={18} aria-hidden="true" />
+        <Icon size={20} aria-hidden="true" />
       </span>
-      <span className="flex-1 font-display text-sm font-bold text-foreground">{label}</span>
+      <span className="flex-1 font-display text-sm font-bold text-foreground lg:text-base">{label}</span>
       {selected ? (
-        <span className="flex-shrink-0 inline-flex items-center gap-1 rounded-md bg-cyan-soft px-2 py-0.5 text-xs font-medium text-background">
+        <span className="inline-flex flex-shrink-0 items-center gap-1 rounded-md bg-cyan-soft px-2 py-0.5 text-xs font-medium text-background">
           <Check size={10} aria-hidden="true" />
           {selectedLabel}
         </span>

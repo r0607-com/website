@@ -1,16 +1,22 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default async function PrivacyPage() {
-  const t = await getTranslations("privacy");
+export default async function PrivacyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "privacy" });
 
   return (
     <main className="pt-28">
-      <article className="mx-auto w-full max-w-3xl px-4 pb-20 sm:px-6">
-        <h1 className="font-display text-4xl font-bold">{t("title")}</h1>
-        <div className="mt-8 space-y-6 leading-7 text-muted">
+      <article className="legal-shell pb-20 lg:pb-28">
+        <h1 className="page-title">{t("title")}</h1>
+        <div className="body-copy mt-10 space-y-8">
           {["intro", "signup", "localAi", "rights", "hosting"].map((key) => (
             <section key={key}>
-              <h2 className="font-display text-xl font-bold text-foreground">
+              <h2 className="font-display text-2xl font-bold text-foreground lg:text-3xl">
                 {t(`${key}.title`)}
               </h2>
               <p className="mt-2">{t(`${key}.copy`)}</p>

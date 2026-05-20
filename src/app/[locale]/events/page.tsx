@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { WorkshopInterestForm } from "@/components/forms/WorkshopInterestForm";
 
@@ -8,24 +8,25 @@ export default async function EventsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("events");
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "events" });
 
   return (
     <main className="tron-grid pt-28">
-      <section className="mx-auto grid w-full max-w-7xl gap-8 px-4 pb-20 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
+      <section className="site-shell grid gap-8 pb-20 lg:grid-cols-[minmax(0,1.2fr)_minmax(420px,0.8fr)] lg:gap-14 lg:pb-28">
         <div>
-          <p className="font-mono text-sm uppercase text-cyan-soft">
+          <p className="section-kicker">
             {t("kicker")}
           </p>
-          <h1 className="mt-4 font-display text-4xl font-bold sm:text-6xl">
+          <h1 className="page-title mt-4 max-w-5xl">
             {t("title")}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
+          <p className="lead-copy mt-6">
             {t("copy")}
           </p>
-          <div className="mt-8 rounded-lg border border-border bg-surface/85 p-6">
+          <div className="mt-10 rounded-lg border border-border bg-surface/85 p-6 lg:p-8">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <h2 className="font-display text-2xl font-bold">
+              <h2 className="font-display text-2xl font-bold lg:text-3xl">
                 {t("card.title")}
               </h2>
               <span className="rounded-md border border-amber-soft/60 px-3 py-2 font-mono text-xs uppercase text-amber-soft">
@@ -34,31 +35,31 @@ export default async function EventsPage({
             </div>
             <dl className="mt-6 grid gap-4 sm:grid-cols-3">
               {["format", "age", "location"].map((item) => (
-                <div key={item} className="rounded-md border border-border bg-background/70 p-4">
+                <div key={item} className="rounded-md border border-border bg-background/70 p-4 lg:p-5">
                   <dt className="font-mono text-xs uppercase text-muted">
                     {t(`card.${item}.label`)}
                   </dt>
-                  <dd className="mt-2 font-medium">{t(`card.${item}.value`)}</dd>
+                  <dd className="mt-2 text-base font-medium lg:text-lg">{t(`card.${item}.value`)}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <div className="mt-8 grid gap-3">
+          <div className="mt-8 grid gap-4">
             {["learn", "bring", "cost", "list"].map((item) => (
               <details
                 key={item}
-                className="rounded-lg border border-border bg-surface/85 p-4"
+                className="rounded-lg border border-border bg-surface/85 p-5 lg:p-6"
               >
-                <summary className="cursor-pointer font-medium">
+                <summary className="cursor-pointer text-base font-medium lg:text-lg">
                   {t(`faq.${item}.q`)}
                 </summary>
-                <p className="mt-3 leading-7 text-muted">{t(`faq.${item}.a`)}</p>
+                <p className="body-copy mt-3">{t(`faq.${item}.a`)}</p>
               </details>
             ))}
           </div>
         </div>
         <div className="lg:sticky lg:top-24 lg:self-start">
-          <h2 className="mb-4 font-display text-2xl font-bold">
+          <h2 className="mb-4 font-display text-2xl font-bold lg:text-3xl">
             {t("formTitle")}
           </h2>
           <WorkshopInterestForm locale={locale} />

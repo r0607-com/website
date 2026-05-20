@@ -90,10 +90,98 @@ a {
 
 /* Gradient logo — neon blue → neon pink → neon teal */
 .logo-gradient {
-  background: linear-gradient(135deg, #38bdf8 0%, #f472b6 55%, #2dd4bf 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #f472b6 55%, #14b8a6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.slogan-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #f472b6 55%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.site-shell {
+  width: 100%;
+  max-width: 92rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.legal-shell {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.section-kicker {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: clamp(0.75rem, 0.35vw + 0.68rem, 0.95rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan-soft);
+}
+
+.page-title {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(2.75rem, 5vw, 6.25rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.section-title {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(2.25rem, 3vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.lead-copy {
+  max-width: 60rem;
+  font-size: clamp(1rem, 0.28vw + 0.95rem, 1.15rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.hero-copy {
+  max-width: 82rem;
+}
+
+.body-copy {
+  font-size: clamp(1rem, 0.35vw + 0.95rem, 1.1875rem);
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.brand-mark {
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 16px var(--glow-cyan));
+}
+
+.brand-wordmark {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(2rem, 2.3vw, 3.125rem);
+  font-weight: 400;
+  line-height: 0.82;
+}
+
+.hero-brand-wordmark {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(4rem, 15vw, 10rem);
+  font-weight: 400;
+  line-height: 0.82;
+}
+
+.hero-slogan {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  font-size: clamp(1.75rem, 2.35vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.05;
 }
 
 .font-mono {

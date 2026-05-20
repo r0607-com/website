@@ -41,7 +41,7 @@ export function SectionViewer({ children, className, label }: SectionViewerProps
   return (
     <div
       className={cn(
-        "relative h-64 overflow-hidden rounded-xl border border-cyan-soft/30 bg-surface/60 shadow-[0_0_40px_var(--glow-cyan)] sm:h-80 lg:h-full lg:min-h-[420px]",
+        "relative h-72 overflow-hidden rounded-xl border border-cyan-soft/30 bg-surface/60 shadow-[0_0_40px_var(--glow-cyan)] sm:h-96 lg:h-full lg:min-h-[520px]",
         className,
       )}
       role="img"

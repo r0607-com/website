@@ -1,7 +1,6 @@
 {
   "nav": {
     "logo": "R0607",
-    "tagline": "Zusammenbauen. Programmieren. Denken.",
     "home": "Start",
     "events": "Workshops",
     "learn": "Lernen",
@@ -22,8 +21,8 @@
   },
   "hero": {
     "badge": "Berlin-Workshops bald verfügbar",
-    "heading": "Baue den Roboter.",
-    "subheading": "Lerne die Zukunft.",
+    "heading": "Imagine · Learn · Create",
+    "subheading": "",
     "copy": "Baue deinen persönlichen Roboter zusammen, wähle Sensoren und Bewegungssysteme und lerne dann mit Aiva — einem lokalen KI-Coach, der direkt auf dem Roboter läuft.",
     "start": "Roboter erkunden",
     "workshops": "Workshop-Interesse",
@@ -251,7 +250,17 @@
     "selected": "Ausgewählt",
     "selectOption": "Option auswählen",
     "learnMore": "Mehr erfahren",
-    "exploreSections": "Bereiche erkunden"
+    "exploreSections": "Bereiche erkunden",
+    "robotControls": {
+      "openMenu": "Robotersteuerung öffnen",
+      "closeMenu": "Robotersteuerung schließen",
+      "startAnimation": "Roboteranimation starten",
+      "stopAnimation": "Roboteranimation stoppen",
+      "rotateLeft": "Roboter nach links drehen",
+      "rotateRight": "Roboter nach rechts drehen",
+      "zoomIn": "Hineinzoomen",
+      "zoomOut": "Herauszoomen"
+    }
   },
   "events": {
     "kicker": "Berlin-Workshops",

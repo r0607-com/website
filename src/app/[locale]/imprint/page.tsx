@@ -1,15 +1,21 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default async function ImprintPage() {
-  const t = await getTranslations("imprint");
+export default async function ImprintPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "imprint" });
 
   return (
     <main className="pt-28">
-      <article className="mx-auto w-full max-w-3xl px-4 pb-20 sm:px-6">
-        <h1 className="font-display text-4xl font-bold">{t("title")}</h1>
-        <div className="mt-8 space-y-6 rounded-lg border border-border bg-surface p-6 leading-7 text-muted">
+      <article className="legal-shell pb-20 lg:pb-28">
+        <h1 className="page-title">{t("title")}</h1>
+        <div className="body-copy mt-10 space-y-8 rounded-lg border border-border bg-surface p-6 lg:p-8">
           <section>
-            <h2 className="mb-2 font-display text-lg font-semibold text-foreground">
+            <h2 className="mb-2 font-display text-xl font-semibold text-foreground lg:text-2xl">
               {t("operator.heading")}
             </h2>
             <p>{t("operator.name")}</p>
@@ -19,24 +25,24 @@ export default async function ImprintPage() {
           </section>
 
           <section>
-            <h2 className="mb-2 font-display text-lg font-semibold text-foreground">
+            <h2 className="mb-2 font-display text-xl font-semibold text-foreground lg:text-2xl">
               {t("responsible.heading")}
             </h2>
             <p>{t("responsible.name")}</p>
           </section>
 
           <section>
-            <h2 className="mb-2 font-display text-lg font-semibold text-foreground">
+            <h2 className="mb-2 font-display text-xl font-semibold text-foreground lg:text-2xl">
               {t("contact.heading")}
             </h2>
-            <p className="font-mono text-sm">{t("contact.email")}</p>
+            <p className="font-mono text-sm lg:text-base">{t("contact.email")}</p>
           </section>
 
           <section>
-            <h2 className="mb-2 font-display text-lg font-semibold text-foreground">
+            <h2 className="mb-2 font-display text-xl font-semibold text-foreground lg:text-2xl">
               {t("note.heading")}
             </h2>
-            <p className="text-sm">{t("note.copy")}</p>
+            <p>{t("note.copy")}</p>
           </section>
         </div>
       </article>

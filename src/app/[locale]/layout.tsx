@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/layout/Footer";
@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://r0607.com"),
     title: {
-      default: "R0607 — Build the robot. Learn the future.",
+      default: "R0607 — Imagine · Learn · Create",
       template: "%s | R0607",
     },
     description: t("copy"),
@@ -34,7 +34,7 @@ export async function generateMetadata({
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "R0607 — Build the robot. Learn the future.",
+          alt: "R0607 — Imagine · Learn · Create",
         },
       ],
     },
@@ -60,7 +60,8 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  setRequestLocale(locale);
+  const messages = await getMessages({ locale });
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>

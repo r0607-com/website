@@ -23,14 +23,14 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://r0607.com"),
   title: {
-    default: "R0607 - Build the robot. Learn the future.",
+    default: "R0607 - Imagine · Learn · Create",
     template: "%s | R0607",
   },
   description:
     "R0607 is a hands-on robotics learning experience with a personal robot, local AI coach, and Berlin workshop plans.",
   openGraph: {
     title: "R0607",
-    description: "Build the robot. Learn the future.",
+    description: "Imagine · Learn · Create",
     url: "https://r0607.com",
     siteName: "R0607",
     type: "website",
